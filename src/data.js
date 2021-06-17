@@ -1,0 +1,43 @@
+const DATA = [
+  {
+    person_id: 1,
+    last_name: "Sullivan",
+    dob: 27 / 01 / 1979,
+    gender: "Male",
+    start_date: "0",
+    work_right: "Temp Visa",
+    work_class_name: "Full-Time",
+    work_class_id: 11,
+    business_unit_name: "Strike Team",
+    business_unit_id: 111,
+    parent_business_unit_id: 1111,
+  },
+  {
+    person_id: 2,
+    last_name: "Jacobsen",
+    dob: 13 / 03 / 1980,
+    gender: "Female",
+    start_date: "0",
+    work_right: "Australian Citizen",
+    work_class_name: "Part-Time",
+    work_class_id: 22,
+    business_unit_name: "Marketing",
+    business_unit_id: 222,
+    parent_business_unit_id: 2222,
+  },
+  {
+    person_id: 3,
+    last_name: "Welsh",
+    dob: 10 / 03 / 1995,
+    gender: "Other",
+    start_date: "0",
+    work_right: "Permanent Resident",
+    work_class_name: "Casual",
+    work_class_id: 33,
+    business_unit_name: "Sales",
+    business_unit_id: 333,
+    parent_business_unit_id: 3333,
+  },
+];
+
+
