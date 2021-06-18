@@ -1,26 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import Counters from "./Counters";
-import GenderAnalysis from "./GenderAnalysis";
-import GenderByAge from "./GenderByAge";
-import Pie from "./Pie";
-// import Victory from "./Victory";
-import WorkClassByAge from "./WorkClassByAge";
 
-
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import WorkStatusMenu from "./pages/WorkStatusMenu";
+import ResidencyMenu from "./pages/ResidencyMenu";
+import GenderMenu from "./pages/GenderMenu";
+import BusinessUnitMenu from "./pages/BusinessUnitMenu";
+import AgeGroupMenu from "./pages/AgeGroupMenu";
 
 function App() {
   
   return (
-    <div className="mainview">
-      <GenderAnalysis />
-      {/* <WorkClassByAge /> */}
-      {/* <Victory /> */}
-      {/* <Pie /> */}
-      {/* <Counters /> */}
-      <GenderByAge />
-   
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/business unit" component={BusinessUnitMenu} />
+          <Route path="/gender" component={GenderMenu} />
+          <Route path="/age group" component={AgeGroupMenu} />
+          <Route path="/work status" component={WorkStatusMenu} />
+          <Route path="/residency" component={ResidencyMenu} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 

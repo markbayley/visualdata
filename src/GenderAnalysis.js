@@ -86,9 +86,9 @@ const data = [
 const allKeys = ["Male", "Female", "Other"];
 
 const colors = {
-  Male: "cyan",
-  Female: "orange",
-  Other: "grey",
+  Male: "#03dfed",
+  Female: "#a35aff",
+  Other: "#0f68fa",
 };
 
 function GenderAnalysis() {
@@ -98,7 +98,8 @@ function GenderAnalysis() {
       <div className="box">
         <div className="title">
           <strong>Gender By: </strong>
-          <a className="active">Business Unit</a> | <a>Age</a> | <a>Work Class</a> | <a>Work Right</a>
+          <a className="active">Business Unit</a> | <a>Age</a> |{" "}
+          <a>Work Class</a> | <a>Work Right</a> | <a>All</a>
           <strong className="total"> Total: 324</strong>
         </div>
 

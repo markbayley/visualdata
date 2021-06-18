@@ -33,7 +33,7 @@ const Pie = () => {
       .attr("height", 600)
       // .style('background-color','yellow')
       .append("g")
-      .attr("transform", "translate(300,300)");
+      .attr("transform", "translate(250,200)");
 
     // Add tooltip
     const tooldiv = d3
@@ -58,7 +58,7 @@ const Pie = () => {
 
         tooldiv
           .style("visibility", "visible")
-          .text(`${d.data.item}:` + `${d.data.count}`);
+          // .text(`${d.data.item}:` + `${d.data.count}`);
       })
       .on("mousemove", (e, d) => {
         tooldiv

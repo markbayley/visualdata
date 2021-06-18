@@ -16,10 +16,7 @@ body {
   background: -ms-linear-gradient(top,  rgba(31,35,60,1) 0%,rgba(67,71,147,1) 100%);
   background: linear-gradient(to bottom,  rgba(31,35,60,1) 0%,rgba(67,71,147,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f233c', endColorstr='#434793',GradientType=0 );
-
-
-  
-}
+} 
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

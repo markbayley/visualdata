@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import BarChart from "./BarChart";
 
+
 const data = [
   {
     work_class: "18-25",
@@ -38,12 +39,12 @@ const data = [
 const allKeys = ["Male", "Female", "Other"];
 
 const colors = {
-  Male: "cyan",
-  Female: "orange",
-  Other: "grey",
+  Male: "#6f5df6",
+  Female: "#ff666f",
+  Other: "#2de4e3",
 };
 
-function GenderBywork_class() {
+function GenderByAge() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
@@ -83,4 +84,4 @@ function GenderBywork_class() {
   );
 }
 
-export default GenderBywork_class;
+export default GenderByAge;
