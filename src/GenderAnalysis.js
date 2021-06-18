@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import StackedBarChart from "./StackedBarChart";
 
-const data = [
+import { csv } from "d3";
+import { message } from "./message";
+
+const csvUrl =
+  "../chart-data.csv";
+
+
+
+
+const mockdata = [
   {
     business_unit: "Marketing",
     Male: 34,
@@ -91,7 +100,20 @@ const colors = {
   Other: "#0f68fa",
 };
 
-function GenderAnalysis() {
+
+
+
+
+ 
+
+
+
+const GenderAnalysis = () => {
+    const [data, setData] = useState(null);
+
+  useEffect(() => {
+    csv(csvUrl).then(setData);
+  }, []);
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
@@ -100,10 +122,12 @@ function GenderAnalysis() {
           <strong>Gender By: </strong>
           <a className="active">Business Unit</a> | <a>Age</a> |{" "}
           <a>Work Class</a> | <a>Work Right</a> | <a>All</a>
-          <strong className="total"> Total: 324</strong>
+          <strong className="total"> Total: 277  
+          {/* <pre>{data ? message(data) : "Loading..."}</pre> */}
+          </strong>
         </div>
 
-        <StackedBarChart data={data} keys={keys} colors={colors} />
+        <StackedBarChart data={mockdata} keys={keys} colors={colors} />
 
         <div className="fields">
           {allKeys.map((key) => (
