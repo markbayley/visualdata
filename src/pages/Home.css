@@ -11,7 +11,7 @@
   flex-flow: row wrap;
   
   /* Then we define how is distributed the remaining space */
-  justify-content: space-around;
+  justify-content: center;
   
   padding: 0;
   margin: 0;
@@ -20,9 +20,57 @@
 
 .flex-item {
   /* background: tomato; */
+  /* padding: 15px; */
+  width: 23%;
+  height: 270px;
+  /* margin: 0px 10px 20px 0px; */
+  /* line-height: 150px; */
+  color: white;
+
+  /* font-size: 1.2em;
+  text-align: center; */
+  /* border-radius: 10px; */
+  border: 1px solid #fff
+}
+
+
+
+.flex-item-large {
+  /* background: tomato; */
+  /* padding: 15px; */
+  width: 51%;
+  height: 270px;
+  /* margin: 0px 10px 0px 0px; */
+  /* line-height: 150px; */
+  color: white;
+
+  /* font-size: 1.2em; */
+  text-align: left;
+  /* border-radius: 10px; */
+  border: 1px solid #fff
+}
+
+.flex-item-chart {
+  /* background: tomato; */
+  /* padding: 15px; */
+  width: 67%;
+  border: 1px solid #fff;
+  /* height: 280px; */
+  /* margin: 20px 10px 20px 0px;
+  line-height: 150px;
+  color: white;
+
+  font-size: 1.5em;
+  text-align: center; */
+  /* border-radius: 10px;
+  border: 1px solid #fff */
+}
+
+.flex-item-small {
+  /* background: tomato; */
   padding: 15px;
-  width: 25%;
-  height: 300px;
+  width: 15%;
+  height: 200px;
   margin: 20px 10px 20px 0px;
   line-height: 150px;
   color: white;
@@ -31,4 +79,23 @@
   text-align: center;
   border-radius: 10px;
   border: 1px solid #fff
+}
+
+.flex-item-borderless {
+  /* background: tomato; */
+  padding: 15px;
+  width: 15%;
+  height: 280px;
+  margin: 20px 10px 20px 0px;
+  line-height: 150px;
+  color: white;
+
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 10px;
+  /* border: 1px solid #fff */
+}
+
+h3 {
+  margin-left: 20px;
 }

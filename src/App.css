@@ -25,15 +25,15 @@ svg rect.selection {
   
 } 
 
-button {
+/* button {
   width: 100px;
   border: 1px solid black;
   margin: 0 auto 5px;
-}
+} */
 
 .field {
   display: inline-block;
-  margin: 0 0.5em;
+  margin: 0 1.5em;
 }
 
 .field input {
@@ -42,8 +42,8 @@ button {
 
 .box {
   border: 1px solid #fff;
-  padding: 25px 45px;
-  border-radius: 10px;
+  padding: 78px 95px;
+  /* border-radius: 10px; */
 }
 
 .title {

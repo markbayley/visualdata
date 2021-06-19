@@ -1,9 +1,12 @@
 import React, { useState, useCallback, useEffect } from "react";
-import GenderAnalysis from "../GenderAnalysis";
-import Pie from "../Pie";
+import GenderAnalysis from "../components/GenderAnalysis";
+import PieChart from "../charts/PieChart";
 import "./Home.css";
 import { csv } from "d3";
-import { message } from "../message";
+import { message } from "../data/message";
+import DonutChart from "../charts/DonutChart";
+import InteractivityBasic from "../charts/InteractivityBasic";
+import CurvedLineChart from "../charts/CurvedLineChart";
 
 
 
@@ -35,24 +38,42 @@ const Home = () => {
   return (
     <div className="home">
       <ul class="flex-container">
-        <li class="flex-item">
+        {/* <li class="flex-item">
           <div className="number">{data ? message(data) : "Loading..."}</div>
           Employees{" "}
-        </li>
+        </li> */}
 
-        <li class="flex-item">
+        {/* <li class="flex-item">
           <div className="number">45%</div>
           Female{" "}
+        </li> */}
+
+        <li class="flex-item-chart">
+          {" "}
+          <InteractivityBasic />
+        </li>
+        <li class="">
+          {" "}
+          <DonutChart />
+        </li>
+        {/* <li class="" style={{ border: "1px solid red" }}>
+          {" "}
+          <InteractivityBasic />
+        </li> */}
+        <li class="flex-item">
+          {/* <h3>Employees by Residency </h3> */}
+          <PieChart />
         </li>
         <li class="flex-item">
-          {" "}
-          <Pie />
+          <h3>Employees by Gender </h3>
+          {/* <div className="number">45%</div>
+          Female{" "} */}
+        </li>
+        <li class="flex-item-large">
+          <h3>Employees by Age Group </h3>
+          <CurvedLineChart />
         </li>
       </ul>
-      <h2 style={{ textAlign: "center" }}></h2>
-      <div style={{ marginLeft: "3%", marginRight: "3%" }}>
-        <GenderAnalysis />
-      </div>
     </div>
   );
 };

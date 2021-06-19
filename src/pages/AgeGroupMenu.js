@@ -1,5 +1,5 @@
 import React from "react";
-import GenderByAge from "../GenderByAge";
+import GenderByAge from "../components/GenderByAge";
 
 function BusinessUnitMenu() {
   return (

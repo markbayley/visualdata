@@ -16,7 +16,7 @@ const Pie = () => {
     // Get positions for each data object
     const piedata = d3.pie().value((d) => d.count)(data);
     // Define arcs for graphing
-    const arc = d3.arc().innerRadius(0).outerRadius(150);
+    const arc = d3.arc().innerRadius(0).outerRadius(100);
 
     const colors = d3.scaleOrdinal([
       "#ffa822",
@@ -29,11 +29,11 @@ const Pie = () => {
     // Define the size and position of svg
     const svg = d3
       .select(pieChart.current)
-      .attr("width", 600)
-      .attr("height", 600)
+      .attr("width", 400)
+      .attr("height", 400)
     
       .append("g")
-      .attr("transform", "translate(250,150)");
+      .attr("transform", "translate(200,100)");
 
     // Add tooltip
     const tooldiv = d3

@@ -1,5 +1,5 @@
 import React from "react";
-import GenderAnalysis from "../GenderAnalysis";
+import GenderAnalysis from "../components/GenderAnalysis";
 
 function WorkStatusMenu() {
   return (

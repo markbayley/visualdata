@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./App.css";
-import BarChart from "./BarChart";
+import "./../App.css";
+import BarChart from "../charts/BarChart";
 
 
 const data = [

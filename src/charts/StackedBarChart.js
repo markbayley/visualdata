@@ -9,7 +9,7 @@ import {
   axisLeft,
   stackOrderAscending,
 } from "d3";
-import useResizeObserver from "./useResizeObserver";
+import useResizeObserver from "../tools/useResizeObserver";
 
 /**
  * Component that renders a StackedBarChart
@@ -57,21 +57,22 @@ function StackedBarChart({ data, keys, colors }) {
       .attr("y", (sequence) => yScale(sequence[1]))
       .attr("height", (sequence) => yScale(sequence[0]) - yScale(sequence[1]));
      
-
     // axes
     const xAxis = axisBottom(xScale);
     svg
       .select(".x-axis")
       .attr("transform", `translate(0, ${height})`)
-      .call(xAxis);
-
+      .call(xAxis)
+      .transition()
+      .duration(1000);
+        
     const yAxis = axisLeft(yScale);
     svg.select(".y-axis").call(yAxis);
   }, [colors, data, dimensions, keys]);
 
   return (
     <React.Fragment>
-      <div ref={wrapperRef} style={{ marginBottom: "2rem" }}>
+      <div ref={wrapperRef} style={{ marginBottom: "3rem" }}>
         <svg ref={svgRef}>
           <g className="x-axis" />
           <g className="y-axis" />

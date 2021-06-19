@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
-import StackedBarChart from "./StackedBarChart";
-
+import "./../App.css";
+import StackedBarChart from "../charts/StackedBarChart";
 import { csv } from "d3";
-import { message } from "./message";
+import { message } from "../data/message";
 
 const csvUrl =
   "../chart-data.csv";
-
-
-
 
 const mockdata = [
   {
@@ -95,17 +91,10 @@ const mockdata = [
 const allKeys = ["Male", "Female", "Other"];
 
 const colors = {
-  Male: "#03dfed",
-  Female: "#a35aff",
-  Other: "#0f68fa",
+  Male: "#6f5df6",
+  Female: "#9636d6",
+  Other: "#d56b99",
 };
-
-
-
-
-
- 
-
 
 
 const GenderAnalysis = () => {
