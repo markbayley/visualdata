@@ -1,61 +1,56 @@
 import React, { useState } from "react";
-import "./../App.css";
 import BarChart from "../charts/BarChart";
-
 
 const data = [
   {
-    work_class: "18-25",
-    Male: 34,
-    Female: 60,
-    Other: 3,
+    work_class: "Australian Citizen",
+    fulltime: 14,
+    partime: 20,
+    fixedterm: 10,
+    casual: 63,
   },
   {
-    work_class: "26-39",
-    Male: 20,
-    Female: 40,
-    Other: 6,
+    work_class: "Permanent Resident",
+    fulltime: 50,
+    partime: 30,
+    fixedterm: 10,
+    casual: 6,
   },
   {
-    work_class: "40-59",
-    Male: 30,
-    Female: 45,
-    Other: 8,
+    work_class: "Temporary Visa",
+    fulltime: 60,
+    partime: 45,
+    fixedterm: 10,
+    casual: 8,
   },
   {
-    work_class: "60-75",
-    Male: 40,
-    Female: 60,
-    Other: 3,
-  },
-  {
-    work_class: "76-80",
-    Male: 40,
-    Female: 30,
-    Other: 5,
+    work_class: "Other Visa",
+    fulltime: 70,
+    partime: 15,
+    fixedterm: 27,
+    casual: 3,
   },
 ];
 
-const allKeys = ["Male", "Female", "Other"];
+const allKeys = ["fulltime", "partime", "fixedterm", "casual"];
 
 const colors = {
-  Male: "#6f5df6",
-  Female: "#ff666f",
-  Other: "#2de4e3",
+  fulltime: "orange",
+  partime: "slateblue",
+  fixedterm: "mediumpurple",
+  casual: "gold",
 };
 
-function GenderByAge() {
+function ResidencyAnalysis() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
+        <h2>Residency Analysis</h2>
       <div className="box">
         <div className="title">
-          <strong>Gender By: </strong>
-          <a>Business Unit</a> | <a className="active">Age Group</a> |{" "}
-          <a>Employment Status</a> | <a>Residency Class</a>
-          <strong className="total"> Total: 324</strong>
+          Residency By: <a>Business Unit</a> | <a>Gender</a> | <a>Age Group</a> |
+          <a className="active"> Work Status</a>
         </div>
-
         <BarChart data={data} keys={keys} colors={colors} />
 
         <div className="fields">
@@ -84,4 +79,4 @@ function GenderByAge() {
   );
 }
 
-export default GenderByAge;
+export default ResidencyAnalysis;

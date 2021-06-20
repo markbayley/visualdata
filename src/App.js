@@ -3,12 +3,12 @@ import "./App.css";
 
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import WorkStatusMenu from "./pages/WorkStatusMenu";
-import ResidencyMenu from "./pages/ResidencyMenu";
-import GenderMenu from "./pages/GenderMenu";
-import BusinessUnitMenu from "./pages/BusinessUnitMenu";
-import AgeGroupMenu from "./pages/AgeGroupMenu";
+import Home from "./components/Home";
+import WorkAnalysis from "./components/WorkAnalysis";
+import ResidencyAnalysis from "./components/ResidencyAnalysis";
+import GenderAnalysis from "./components/GenderAnalysis";
+import BusinessAnalysis from "./components/BusinessAnalysis";
+import AgeAnalysis from "./components/AgeAnalysis";
 
 function App() {
   
@@ -18,11 +18,11 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/business unit" component={BusinessUnitMenu} />
-          <Route path="/gender" component={GenderMenu} />
-          <Route path="/age group" component={AgeGroupMenu} />
-          <Route path="/work status" component={WorkStatusMenu} />
-          <Route path="/residency" component={ResidencyMenu} />
+          <Route path="/business unit" component={BusinessAnalysis} />
+          <Route path="/gender" component={GenderAnalysis} />
+          <Route path="/age group" component={AgeAnalysis} />
+          <Route path="/work status" component={WorkAnalysis} />
+          <Route path="/residency" component={ResidencyAnalysis} />
         </Switch>
       </Router>
     </>

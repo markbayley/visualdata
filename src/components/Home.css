@@ -50,6 +50,21 @@
   border: 1px solid #fff
 }
 
+.flex-item-xlarge {
+  /* background: tomato; */
+  /* padding: 15px; */
+  width: 75%;
+  height: 800px;
+  /* margin: 0px 10px 0px 0px; */
+  /* line-height: 150px; */
+  color: white;
+
+  /* font-size: 1.2em; */
+  text-align: left;
+  /* border-radius: 10px; */
+  border: 1px solid #fff
+}
+
 .flex-item-chart {
   /* background: tomato; */
   /* padding: 15px; */
@@ -98,4 +113,8 @@
 
 h3 {
   margin-left: 20px;
+}
+
+h2 {
+  text-align: center;
 }

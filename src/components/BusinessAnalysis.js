@@ -4,8 +4,7 @@ import StackedBarChart from "../charts/StackedBarChart";
 import { csv } from "d3";
 import { message } from "../data/message";
 
-const csvUrl =
-  "../chart-data.csv";
+const csvUrl = "../chart-data.csv";
 
 const mockdata = [
   {
@@ -96,9 +95,8 @@ const colors = {
   Other: "#d56b99",
 };
 
-
-const GenderAnalysis = () => {
-    const [data, setData] = useState(null);
+const BusinessAnalysis = () => {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     csv(csvUrl).then(setData);
@@ -106,11 +104,11 @@ const GenderAnalysis = () => {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-      <h2>Gender Analysis</h2>
+      <h2>Business Unit Analysis</h2>
       <div className="box">
         <div className="title">
-          <strong>Gender By: </strong>
-          <a className="active">Business Unit</a> | <a>Age Group</a> |{" "}
+          <strong>Business Unit by: </strong>
+          <a className="active">Gender</a> | <a>Age Group</a> |{" "}
           <a>Work Status</a> | <a>Residency</a> 
           <strong className="total">
             {" "}
@@ -145,6 +143,6 @@ const GenderAnalysis = () => {
       </div>
     </React.Fragment>
   );
-}
+};
 
-export default GenderAnalysis;
+export default BusinessAnalysis;

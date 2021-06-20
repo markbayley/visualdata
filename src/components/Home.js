@@ -1,5 +1,4 @@
 import React, { useState, useCallback, useEffect } from "react";
-import GenderAnalysis from "../components/GenderAnalysis";
 import PieChart from "../charts/PieChart";
 import "./Home.css";
 import { csv } from "d3";
@@ -7,8 +6,6 @@ import { message } from "../data/message";
 import DonutChart from "../charts/DonutChart";
 import InteractivityBasic from "../charts/InteractivityBasic";
 import CurvedLineChart from "../charts/CurvedLineChart";
-
-
 
 
 const csvUrl =
@@ -21,8 +18,6 @@ const Home = () => {
     csv(csvUrl).then(setData);
   }, []);
 
-  
-
    console.log(data);
   //  console.log(data.columns.person_id);
 
@@ -34,35 +29,18 @@ const Home = () => {
     //     ))}
     // </pre>;
 
-
   return (
     <div className="home">
       <ul class="flex-container">
-        {/* <li class="flex-item">
-          <div className="number">{data ? message(data) : "Loading..."}</div>
-          Employees{" "}
-        </li> */}
-
-        {/* <li class="flex-item">
-          <div className="number">45%</div>
-          Female{" "}
-        </li> */}
-
         <li class="flex-item-chart">
-          {" "}
           <InteractivityBasic />
         </li>
         <li class="">
-          {" "}
           <DonutChart />
         </li>
-        {/* <li class="" style={{ border: "1px solid red" }}>
-          {" "}
-          <InteractivityBasic />
-        </li> */}
         <li class="flex-item">
-          {/* <h3>Employees by Residency </h3> */}
-          <PieChart />
+          <h3>Employees by Residency </h3>
+          {/* <PieChart /> */}
         </li>
         <li class="flex-item">
           <h3>Employees by Gender </h3>

@@ -1,53 +1,62 @@
 import React, { useState } from "react";
-import "./App.css";
-import BarChart from "./BarChart";
+import "./../App.css";
+import BarChart from "../charts/BarChart";
+
 
 const data = [
   {
     work_class: "18-25",
-    Full_Time: 14,
-    partime: 20,
-    fixedterm: 10,
-    casual: 63,
+    Male: 34,
+    Female: 60,
+    Other: 3,
   },
   {
-    work_class: "26-35",
-    fulltime: 50,
-    partime: 30,
-    fixedterm: 10,
-    casual: 6,
+    work_class: "26-39",
+    Male: 20,
+    Female: 40,
+    Other: 6,
   },
   {
-    work_class: "36-55",
-    fulltime: 60,
-    partime: 45,
-    fixedterm: 10,
-    casual: 8,
+    work_class: "40-59",
+    Male: 30,
+    Female: 45,
+    Other: 8,
   },
   {
-    work_class: "56-75",
-    fulltime: 70,
-    partime: 15,
-    fixedterm: 27,
-    casual: 3,
+    work_class: "60-75",
+    Male: 40,
+    Female: 60,
+    Other: 3,
+  },
+  {
+    work_class: "76-80",
+    Male: 40,
+    Female: 30,
+    Other: 5,
   },
 ];
 
-const allKeys = ["Full_Time", "partime", "fixedterm", "casual"];
+const allKeys = ["Male", "Female", "Other"];
 
 const colors = {
-  Full_Time: "orange",
-  partime: "#2de4e3",
-  fixedterm: "#ff666f",
-  casual: "#6f5df6",
+  Male: "#6f5df6",
+  Female: "#9636d6",
+  Other: "#d56b99",
 };
 
-function WorkClassByAge() {
+function AgeAnalysis() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
+      <h2>Age Analysis</h2>
       <div className="box">
-        <div className="title">Work Class By Age </div>
+        <div className="title">
+          <strong>Age Group by: </strong>
+          <a>Business Unit</a> | <a className="active">Gender</a> |{" "}
+          <a>Work Status</a> | <a>Residency</a>
+          <strong className="total"> Total: 277</strong>
+        </div>
+
         <BarChart data={data} keys={keys} colors={colors} />
 
         <div className="fields">
@@ -72,9 +81,8 @@ function WorkClassByAge() {
           ))}
         </div>
       </div>
-      
     </React.Fragment>
   );
 }
 
-export default WorkClassByAge;
+export default AgeAnalysis;
