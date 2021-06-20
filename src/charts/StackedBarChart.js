@@ -11,9 +11,6 @@ import {
 } from "d3";
 import useResizeObserver from "../tools/useResizeObserver";
 
-/**
- * Component that renders a StackedBarChart
- */
 
 function StackedBarChart({ data, keys, colors }) {
   const svgRef = useRef();

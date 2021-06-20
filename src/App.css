@@ -29,6 +29,15 @@ svg rect.selection {
   margin: 0 auto 5px;
 } */
 
+
+h3 {
+  margin-left: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
 .field {
   display: inline-block;
   margin: 0 1.5em;
@@ -97,21 +106,3 @@ a:hover{
   }
 }
 
-
-/* .flex-item-chart {
-  border: 1px solid #fff;
-  padding: 18px 19px;
-  /* border-radius: 10px; 
-  width: auto;
-  font-size: 0.8em;
-} */
-
-/* 
-@media only screen and (min-width: 600px) {
-  .flex-item-chart {
-    width: 75%;
-    margin: auto;
-    padding: 78px 95px;
-    font-size: 1.1em;
-  }
-} */

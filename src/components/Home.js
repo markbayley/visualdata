@@ -36,9 +36,6 @@ const Home = () => {
             Employees by Business Unit{" "}
             <div className="total">Total: {data ? message(data) : "Loading..."} </div>
           </h3>
-
-          <strong className="total"> </strong>
-
           <InteractivityBasic />
         </li>
         <li className="">
