@@ -47,6 +47,7 @@ svg rect.selection {
 
 .total {
   float: right;
+  padding-right: 30px;
 }
 
 .mainview {
