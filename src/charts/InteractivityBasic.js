@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
-// import { Button } from "antd";
 
 const InteractivityBasic = () => {
   const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75, 21, 15, 38, 12, 19]);
@@ -86,24 +85,10 @@ const InteractivityBasic = () => {
 
   return (
     <div style={{ marginLeft: "40px" }}>
-      <h3 >Employees by Business Unit </h3>
-
       <svg ref={svgRef} width={width} height={height}>
         <g className="x-axis" />
         <g className="y-axis" />
       </svg>
-
-      {/* <button onClick={() => setData(data.map((value) => value + 5))}>
-        Update data
-      </button>
-      <button onClick={() => setData(data.filter((value) => value < 35))}>
-        Filter data
-      </button>
-      <button
-        onClick={() => setData([...data, Math.round(Math.random() * 100)])}
-      >
-        Add data
-      </button> */}
     </div>
   );
 };

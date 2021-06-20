@@ -1,5 +1,4 @@
 import React, { useState, useCallback, useEffect } from "react";
-import PieChart from "../charts/PieChart";
 import "./Home.css";
 import { csv } from "d3";
 import { message } from "../data/message";
@@ -31,23 +30,30 @@ const Home = () => {
 
   return (
     <div className="home">
-      <ul class="flex-container">
-        <li class="flex-item-chart">
+      <ul className="flex-container">
+        <li className="flex-item-chart">
+          <h3>
+            Employees by Business Unit{" "}
+            <div className="total">Total: {data ? message(data) : "Loading..."} </div>
+          </h3>
+
+          <strong className="total"> </strong>
+
           <InteractivityBasic />
         </li>
-        <li class="">
+        <li className="">
           <DonutChart />
         </li>
-        <li class="flex-item">
+        <li className="flex-item">
           <h3>Employees by Residency </h3>
           {/* <PieChart /> */}
         </li>
-        <li class="flex-item">
+        <li className="flex-item">
           <h3>Employees by Gender </h3>
           {/* <div className="number">45%</div>
           Female{" "} */}
         </li>
-        <li class="flex-item-large">
+        <li className="flex-item-large">
           <h3>Employees by Age Group </h3>
           <CurvedLineChart />
         </li>
