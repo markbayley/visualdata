@@ -2,97 +2,64 @@ import React, { useState, useEffect } from "react";
 import StackedBarChart from "../charts/StackedBarChart";
 import { csv } from "d3";
 import { message } from "../data/message";
+import { Link } from "react-router-dom";
 
 const csvUrl =
   "../chart-data.csv";
 
 const mockdata = [
   {
-    business_unit: "Marketing",
-    Male: 34,
-    Female: 60,
-    Other: 3,
+    business_unit: "Male",
+    Marketing: 34,
+    Sales: 60,
+    IT: 3,
+    Research: 1,
+    Finance: 30,
+    Distribution: 2,
+    HR: 13,
   },
   {
-    business_unit: "Distribution",
-    Male: 20,
-    Female: 40,
-    Other: 6,
+    business_unit: "Female",
+    Marketing: 34,
+    Sales: 60,
+    IT: 3,
+    Research: 1,
+    Finance: 43,
+    Distribution: 2,
+    HR: 30,
   },
   {
-    business_unit: "Finance",
-    Male: 30,
-    Female: 45,
-    Other: 8,
+    business_unit: "Non-Binary",
+    Marketing: 3,
+    Sales: 6,
+    IT: 3,
+    Research: 1,
+    Finance: 1,
+    Distribution: 1,
+    HR: 30,
   },
   {
-    business_unit: "HR",
-    Male: 40,
-    Female: 60,
-    Other: 3,
-  },
-  {
-    business_unit: "Software",
-    Male: 50,
-    Female: 30,
-    Other: 12,
-  },
-  {
-    business_unit: "IT",
-    Male: 73,
-    Female: 32,
-    Other: 12,
-  },
-  {
-    business_unit: "Contact Centre",
-    Male: 23,
-    Female: 32,
-    Other: 2,
-  },
-  {
-    business_unit: "HR",
-    Male: 43,
-    Female: 32,
-    Other: 12,
-  },
-  {
-    business_unit: "Admin",
-    Male: 13,
-    Female: 3,
-    Other: 2,
-  },
-  {
-    business_unit: "Legal",
-    Male: 32,
-    Female: 32,
-    Other: 12,
-  },
-  {
-    business_unit: "Packing",
-    Male: 13,
-    Female: 32,
-    Other: 12,
-  },
-  {
-    business_unit: "R & D",
-    Male: 43,
-    Female: 22,
-    Other: 8,
-  },
-  {
-    business_unit: "Strike Team",
-    Male: 23,
-    Female: 32,
-    Other: 12,
+    business_unit: "Other",
+    Marketing: 3,
+    Sales: 6,
+    IT: 3,
+    Research: 1,
+    Finance: 3,
+    Distribution: 2,
+    HR: 3,
   },
 ];
 
-const allKeys = ["Male", "Female", "Other"];
+const allKeys = ["Marketing", "Sales", "IT", "Research", "Finance", "Distribution", "HR"];
 
 const colors = {
-  Male: "#6f5df6",
-  Female: "#9636d6",
-  Other: "#d56b99",
+  Marketing: "#6f5df6",
+  Sales: "#9636d6",
+  IT: "#d56b99",
+  Research: "gold",
+  Finance: "plum",
+  Distribution: "yellow",
+  HR: "coral",
 };
 
 
@@ -108,8 +75,8 @@ const GenderAnalysis = () => {
       <h2>Gender Analysis</h2>
       <div className="box">
         <div className="title">
-          <strong>Gender By: </strong>
-          <a className="active">Business Unit</a> | <a>Age Group</a> |{" "}
+          <strong>Gender by: </strong>
+          <Link to={'/business-unit'} className="active">Business Unit</Link> | <a>Age Group</a> |{" "}
           <a>Work Status</a> | <a>Residency</a> 
           <strong className="total">
             {" "}

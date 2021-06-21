@@ -8,7 +8,7 @@ export const SidebarData = [
   },
   {
     title: "Business Unit",
-    path: "/business unit",
+    path: "/business-unit",
     // icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
   },
@@ -20,13 +20,13 @@ export const SidebarData = [
   },
   {
     title: "Age Group",
-    path: "/age group",
+    path: "/age-group",
     // icon: <IoIcons.IoMdPeople />,
     cName: "nav-text",
   },
   {
     title: "Work Status",
-    path: "/work status",
+    path: "/work-status",
     // icon: <FaIcons.FaEnvelopeOpenText />,
     cName: "nav-text",
   },

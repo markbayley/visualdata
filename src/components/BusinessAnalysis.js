@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import StackedBarChart from "../charts/StackedBarChart";
 import { csv } from "d3";
 import { message } from "../data/message";
+import { Link } from "react-router-dom";
 
 const csvUrl = "../chart-data.csv";
 
@@ -97,6 +98,7 @@ const colors = {
 const BusinessAnalysis = () => {
   const [data, setData] = useState(null);
 
+  //When rerendering execute this function
   useEffect(() => {
     csv(csvUrl).then(setData);
   }, []);
@@ -106,9 +108,11 @@ const BusinessAnalysis = () => {
       <h2>Business Unit Analysis</h2>
       <div className="box">
         <div className="title">
+     
+    
           <strong>Business Unit by: </strong>
-          <a className="active">Gender</a> | <a>Age Group</a> |{" "}
-          <a>Work Status</a> | <a>Residency</a> 
+          <Link to={'/gender'} className="active">Gender</Link> | <a>Age Group</a> |{" "}
+          <a>Work Status</a> | <a>Residency</a>
           <strong className="total">
             {" "}
             Total: 277

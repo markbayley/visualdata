@@ -18,10 +18,10 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/business unit" component={BusinessAnalysis} />
+          <Route path="/business-unit" component={BusinessAnalysis} />
           <Route path="/gender" component={GenderAnalysis} />
-          <Route path="/age group" component={AgeAnalysis} />
-          <Route path="/work status" component={WorkAnalysis} />
+          <Route path="/age-group" component={AgeAnalysis} />
+          <Route path="/work-status" component={WorkAnalysis} />
           <Route path="/residency" component={ResidencyAnalysis} />
         </Switch>
       </Router>
