@@ -1,5 +1,20 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
+import styled from "styled-components";
+
+
+const Canvas = styled.div`
+  display: grid;
+  place-items: center;
+  rect {
+  
+    &:hover {
+      fill: yellowgreen;
+      transition: all 0.2s;
+    }
+  }
+`;
+
 
 const InteractivityBasic = () => {
   const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75, 21, 15, 38, 12, 19]);
@@ -84,12 +99,14 @@ const InteractivityBasic = () => {
   }, [data]);
 
   return (
-    <div style={{ marginLeft: "40px" }}>
-      <svg ref={svgRef} width={width} height={height}>
-        <g className="x-axis" />
-        <g className="y-axis" />
-      </svg>
-    </div>
+    <Canvas>
+      <div style={{ marginLeft: "40px" }}>
+        <svg ref={svgRef} width={width} height={height}>
+          <g className="x-axis" />
+          <g className="y-axis" />
+        </svg>
+      </div>
+    </Canvas>
   );
 };
 

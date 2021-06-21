@@ -11,8 +11,8 @@ const CurvedLineChart = () => {
     const svg = d3.select(svgRef.current);
     const myLine = d3
       .line()
-      .x((value, index) => index * 130)
-      .y((value) => 150 - value)
+      .x((value, index) => index * 75)
+      .y((value) => 170 - value)
       .curve(d3.curveCardinal);
     svg
       .selectAll("path")
@@ -20,8 +20,8 @@ const CurvedLineChart = () => {
       .data([data])
       .join("path")
       .attr("d", (value) => myLine(value))
-      .attr("fill", "none")
-      .attr("stroke", "orange")
+      .attr("fill", "orange")
+      .attr("stroke", "gold")
       
   }, [data]);
 

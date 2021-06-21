@@ -1,11 +1,12 @@
 import React, { useState, useCallback, useEffect } from "react";
 import "./Home.css";
-import { csv } from "d3";
 import { message } from "../data/message";
 import DonutChart from "../charts/DonutChart";
 import InteractivityBasic from "../charts/InteractivityBasic";
 import CurvedLineChart from "../charts/CurvedLineChart";
-
+import { csv } from "d3";
+// import Test from './../Test';
+import Bar from "../charts/Bar";
 
 const csvUrl =
   "./chart-data.csv";
@@ -34,7 +35,9 @@ const Home = () => {
         <li className="flex-item-chart">
           <h3>
             Employees by Business Unit{" "}
-            <div className="total">Total: {data ? message(data) : "Loading..."} </div>
+            <div className="total">
+              Total: {data ? message(data) : "Loading..."}{" "}
+            </div>
           </h3>
           <InteractivityBasic />
         </li>
@@ -49,12 +52,15 @@ const Home = () => {
           <h3>Employees by Gender </h3>
           {/* <div className="number">45%</div>
           Female{" "} */}
+          <Bar />
         </li>
         <li className="flex-item-large">
           <h3>Employees by Age Group </h3>
           <CurvedLineChart />
         </li>
       </ul>
+
+      {/* <Test /> */}
     </div>
   );
 };
