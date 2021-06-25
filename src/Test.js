@@ -3,7 +3,7 @@ import vegaLite from "vega-lite";
 import vl from "vega-lite-api";
 import { Handler } from "vega-tooltip";
 import { config } from "./config";
-import { getData } from "./getData";
+import { getData } from "./data/getData";
 import { viz } from "./viz";
 
 vl.register(vega, vegaLite, {

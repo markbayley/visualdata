@@ -12,7 +12,7 @@ import {
 import useResizeObserver from "../tools/useResizeObserver";
 
 /**
- * Component that renders a StackedBarChart
+ * Component that renders a BarChart
  */
 
 function BarChart({ data, keys, colors }) {
@@ -55,22 +55,23 @@ function BarChart({ data, keys, colors }) {
       .attr("x", (sequence) => xScale(sequence.data.work_class))
       .attr("width", xScale.bandwidth())
 
-    //   .on("mouseenter", (event, value) => {
+      .on("mouseenter", (event, value) => {
 
-    //     const index = svg.selectAll(".bar").nodes().indexOf(event.target);
-    //     svg
-    //       .selectAll(".tooltip")
-    //       .data([value])
-    //       .join((enter) => enter.append("text").attr("y", yScale(value) - 4))
-    //       .attr("class", "tooltip")
-    //       .text(value)
-    //       .attr("x", xScale(index) + xScale.bandwidth() / 2)
-    //       .attr("text-anchor", "middle")
-    //       .transition()
-    //       .attr("y", yScale(value) - 8)
-    //       .attr("opacity", 1);
-    //   })
-    //   .on("mouseleave", () => svg.select(".tooltip").remove())
+        const index = svg.selectAll(".bar").nodes().indexOf(event.target);
+        svg
+          .selectAll(".tooltip")
+          .data([value])
+          .join((enter) => enter.append("text").attr("y", yScale(value) - 4))
+          .attr("class", "tooltip")
+          .text(value)
+          .attr("x", xScale(index) + xScale.bandwidth() / 2)
+          .attr("text-anchor", "middle")
+          .transition()
+          .attr("y", yScale(value) - 8)
+          .attr("opacity", 1)
+          .attr("fill", '#fff');
+      })
+      .on("mouseleave", () => svg.select(".tooltip").remove())
      
       .attr("y", (sequence) => yScale(sequence[1]))
       .attr("height", (sequence) => yScale(sequence[0]) - yScale(sequence[1]));

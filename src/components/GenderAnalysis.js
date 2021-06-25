@@ -3,72 +3,107 @@ import StackedBarChart from "../charts/StackedBarChart";
 import { csv } from "d3";
 import { message } from "../data/message";
 import { Link } from "react-router-dom";
+import TabPanels from "./TabPanels";
 
 const csvUrl =
   "../chart-data.csv";
 
-const mockdata = [
+export const mockdata = [
   {
-    business_unit: "Male",
-    Marketing: 34,
-    Sales: 60,
-    IT: 3,
-    Research: 1,
-    Finance: 30,
-    Distribution: 2,
-    HR: 13,
+    filter: "Marketing",
+    Male: 34,
+    Female: 60,
+    Other: 3,
   },
   {
-    business_unit: "Female",
-    Marketing: 34,
-    Sales: 60,
-    IT: 3,
-    Research: 1,
-    Finance: 43,
-    Distribution: 2,
-    HR: 30,
+    filter: "Distribution",
+    Male: 20,
+    Female: 40,
+    Other: 6,
   },
   {
-    business_unit: "Non-Binary",
-    Marketing: 3,
-    Sales: 6,
-    IT: 3,
-    Research: 1,
-    Finance: 1,
-    Distribution: 1,
-    HR: 30,
+    filter: "Finance",
+    Male: 30,
+    Female: 45,
+    Other: 8,
   },
   {
-    business_unit: "Other",
-    Marketing: 3,
-    Sales: 6,
-    IT: 3,
-    Research: 1,
-    Finance: 3,
-    Distribution: 2,
-    HR: 3,
+    filter: "HR",
+    Male: 40,
+    Female: 60,
+    Other: 3,
+  },
+  {
+    filter: "Software",
+    Male: 50,
+    Female: 30,
+    Other: 12,
+  },
+  {
+    filter: "IT",
+    Male: 73,
+    Female: 32,
+    Other: 12,
+  },
+  {
+    filter: "Contact Centre",
+    Male: 23,
+    Female: 32,
+    Other: 2,
+  },
+  {
+    filter: "HR",
+    Male: 43,
+    Female: 32,
+    Other: 12,
+  },
+  {
+    filter: "Admin",
+    Male: 13,
+    Female: 3,
+    Other: 2,
+  },
+  {
+    filter: "Legal",
+    Male: 32,
+    Female: 32,
+    Other: 12,
+  },
+  {
+    filter: "Packing",
+    Male: 13,
+    Female: 32,
+    Other: 12,
+  },
+  {
+    filter: "R & D",
+    Male: 43,
+    Female: 22,
+    Other: 8,
+  },
+  {
+    filter: "Strike Team",
+    Male: 23,
+    Female: 32,
+    Other: 12,
   },
 ];
 
-const allKeys = ["Marketing", "Sales", "IT", "Research", "Finance", "Distribution", "HR"];
+const allKeys = ["Male", "Female", "Other"];
 
-const colors = {
-  Marketing: "#6f5df6",
-  Sales: "#9636d6",
-  IT: "#d56b99",
-  Research: "gold",
-  Finance: "plum",
-  Distribution: "yellow",
-  HR: "coral",
+export const colors = {
+  Male: "#6f5df6",
+  Female: "#9636d6",
+  Other: "#d56b99",
 };
 
 
 const GenderAnalysis = () => {
     const [data, setData] = useState(null);
 
-  useEffect(() => {
-    csv(csvUrl).then(setData);
-  }, []);
+  // useEffect(() => {
+  //   csv(csvUrl).then(setData);
+  // }, []);
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
@@ -76,8 +111,11 @@ const GenderAnalysis = () => {
       <div className="box">
         <div className="title">
           <strong>Gender by: </strong>
-          <Link to={'/business-unit'} className="active">Business Unit</Link> | <a>Age Group</a> |{" "}
-          <a>Work Status</a> | <a>Residency</a> 
+          <TabPanels />
+          <Link to={"/business-unit"} className="active">
+            Business Unit
+          </Link>{" "}
+          | <a>Age Group</a> | <a>Work Status</a> | <a>Residency</a>
           <strong className="total">
             {" "}
             Total: 277

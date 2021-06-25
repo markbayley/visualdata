@@ -5,8 +5,14 @@ import DonutChart from "../charts/DonutChart";
 import InteractivityBasic from "../charts/InteractivityBasic";
 import CurvedLineChart from "../charts/CurvedLineChart";
 import { csv } from "d3";
-// import Test from './../Test';
+
+
 import Bar from "../charts/Bar";
+import Interactive from "../charts/Interactive";
+import StackedChart from "../charts/StackedChart";
+import BarStacked from "../charts/BarStacked";
+import Chart from "../charts/Chart";
+import NewInteractive from "../charts/NewInteractive";
 
 const csvUrl =
   "./chart-data.csv";
@@ -47,6 +53,7 @@ const Home = () => {
         <li className="flex-item">
           <h3>Employees by Residency </h3>
           {/* <PieChart /> */}
+          <StackedChart />
         </li>
         <li className="flex-item">
           <h3>Employees by Gender </h3>
@@ -59,8 +66,8 @@ const Home = () => {
           <CurvedLineChart />
         </li>
       </ul>
-
-      {/* <Test /> */}
+       {/* <BarStacked /> */}
+    
     </div>
   );
 };

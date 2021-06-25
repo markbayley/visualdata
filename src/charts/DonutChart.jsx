@@ -14,7 +14,6 @@ const Donut = styled.svg`
   .annotation {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
-   
   }
 `;
 const Legend = styled.svg`

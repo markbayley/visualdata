@@ -28,7 +28,7 @@ const mockdata = [
   {
     business_unit: "HR",
     Male: 40,
-    Female: 60,
+    Female: 30,
     Other: 3,
   },
   {
