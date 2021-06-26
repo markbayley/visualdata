@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   select,
   scaleBand,
@@ -32,7 +32,7 @@ function StackedBarChart({ data, keys, colors }) {
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
 
- 
+  
 
   // will be called initially and on every data change
   useEffect(() => {
@@ -50,7 +50,7 @@ function StackedBarChart({ data, keys, colors }) {
 
     // scales
     const xScale = scaleBand()
-      .domain(data.map((d) => d.business_unit))
+      .domain(data.map((d) => d.filter))
       .range([0, width])
       .padding(0.25);
 
@@ -77,8 +77,13 @@ function StackedBarChart({ data, keys, colors }) {
       tooltip
         .html(subgroupName + "<br>" + subgroupValue)
         .style("opacity", 0.5)
-        .style("display", "");;
+        .style("display", "");
     };
+
+
+
+
+
     const mousemove = function (event, d) {
       tooltip
         .style("transform", "translateY(-55%)")
@@ -100,13 +105,15 @@ function StackedBarChart({ data, keys, colors }) {
       .selectAll("rect")
       .data((layer) => layer)
       .join("rect")
-      .attr("x", (sequence) => xScale(sequence.data.business_unit))
+      .attr("x", (sequence) => xScale(sequence.data.filter))
       .attr("width", xScale.bandwidth())
       .attr("y", (sequence) => yScale(sequence[1]))
       .attr("height", (sequence) => yScale(sequence[0]) - yScale(sequence[1]))
       .on("mouseover", mouseover)
       .on("mousemove", mousemove)
-      .on("mouseleave", mouseleave);
+      .on("mouseleave", mouseleave)
+      .attr("d", (value) => yScale(value));
+    
 
     // axes
     const xAxis = axisBottom(xScale);
@@ -127,11 +134,13 @@ function StackedBarChart({ data, keys, colors }) {
     <Canvas>
       <div id="my_dataviz"></div>
       <div ref={wrapperRef} style={{ marginBottom: "3rem" }}>
-        <svg ref={svgRef}>
+        <svg className="svg" ref={svgRef}>
           <g className="x-axis" />
           <g className="y-axis" />
         </svg>
       </div>
+ 
+      
     </Canvas>
   );
 }

@@ -26,16 +26,11 @@ const CurvedLineChart = () => {
   }, [data]);
 
   return (
-    <div style={{marginLeft: "50px"}}>
+    <div style={{ marginLeft: "50px" }}>
       {/* <h2> Curved Line Chart </h2> */}
-      <svg ref={svgRef} />
-      {/* <br />
-      <Button onClick={() => setData(data.map((value) => value + 5))}>
-        Update data
-      </Button>
-      <Button onClick={() => setData(data.filter((value) => value < 35))}>
-        Filter data
-      </Button> */}
+      <svg className="svg" ref={svgRef} />
+      <br />
+     
     </div>
   );
 };

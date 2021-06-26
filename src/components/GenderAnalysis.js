@@ -111,7 +111,6 @@ const GenderAnalysis = () => {
       <div className="box">
         <div className="title">
           <strong>Gender by: </strong>
-          <TabPanels />
           <Link to={"/business-unit"} className="active">
             Business Unit
           </Link>{" "}
@@ -122,30 +121,7 @@ const GenderAnalysis = () => {
             {/* <pre>{data ? message(data) : "Loading..."}</pre> */}
           </strong>
         </div>
-
-        <StackedBarChart data={mockdata} keys={keys} colors={colors} />
-
-        <div className="fields">
-          {allKeys.map((key) => (
-            <div key={key} className="field">
-              <input
-                id={key}
-                type="checkbox"
-                checked={keys.includes(key)}
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    setKeys(Array.from(new Set([...keys, key])));
-                  } else {
-                    setKeys(keys.filter((_key) => _key !== key));
-                  }
-                }}
-              />
-              <label htmlFor={key} style={{ color: colors[key] }}>
-                {key}
-              </label>
-            </div>
-          ))}
-        </div>
+        <TabPanels data={mockdata} keys={keys} colors={colors} />
       </div>
     </React.Fragment>
   );

@@ -140,7 +140,7 @@ const DonutChart = () => {
   }, [])
 
   return (
-    <div style={{ border: "1px solid #fff" }}>
+    <div style={{ border: "1px solid #fff", paddingBottom: "10px" }}>
       <h3 style={{ marginLeft: "30px" }}>Employees by Work Status</h3>
       <Donut
         width={graphWidth}
@@ -154,21 +154,7 @@ const DonutChart = () => {
           transform={`translate(${graphWidth / 2}, ${graphHeight / 2})`}
         />
       </Donut>
-      <Legend>
-        {data.map(({ label, value }, index) => (
-          <g key={index}>
-            {/* <rect y={index * 20} width={20} height={15} fill={colored(value)} /> */}
-            {/* <text
-            x={45}
-            y={12 + index * 20}
-            fill='white'
-            textAnchor='middle'
-          >
-            {label}
-          </text> */}
-          </g>
-        ))}
-      </Legend>
+    
     </div>
   );
 }

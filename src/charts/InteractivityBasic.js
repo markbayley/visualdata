@@ -106,10 +106,11 @@ const InteractivityBasic = () => {
   return (
     <Canvas>
       <div style={{ marginLeft: "40px" }}>
-        <svg ref={svgRef} width={width} height={height}>
+        <svg className="svg" ref={svgRef} width={width} height={height}>
           <g className="x-axis" />
           <g className="y-axis" />
         </svg>
+     
       </div>
     </Canvas>
   );
