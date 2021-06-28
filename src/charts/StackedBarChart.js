@@ -52,7 +52,7 @@ function StackedBarChart({ data, keys, colors }) {
     const xScale = scaleBand()
       .domain(data.map((d) => d.filter))
       .range([0, width])
-      .padding(0.25);
+      .padding(0.45);
 
 
 
