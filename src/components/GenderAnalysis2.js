@@ -1,49 +1,56 @@
 import React, { useState } from "react";
-import StackedBarChart from "../charts/StackedBarChart";
+import BarChart from "../charts/BarChart";
 
 const data = [
   {
-    filter: "FullTime",
-    Male: 34,
-    Female: 60,
-    Other: 30,
+    filter: "Male",
+    FullTime: 44,
+    PartTime: 6,
+    Fixed: 30,
+    Casual: 15,
   },
   {
-    filter: "PartTime",
-    Male: 13,
-    Female: 60,
-    Other: 3,
+    filter: "Female",
+    FullTime: 14,
+    PartTime: 26,
+    Fixed: 3,
+    Casual: 10,
   },
+
   {
-    filter: "Fixed",
-    Male: 3,
-    Female: 16,
-    Other: 3,
-  },
-  {
-    filter: "Casual",
-    Male: 34,
-    Female: 60,
-    Other: 3,
-  },
+    filter: "Other",
+     FullTime: 44,
+    PartTime: 60,
+    Fixed: 30,
+    Casual: 20,
+  }
 ];
 
-const allKeys = ["Male", "Female", "Other"];
+const allKeys = ["FullTime", "PartTime", "Fixed", "Casual"];
+
+
 
 const colors = {
-  Male: "#6f5df6",
-  Other: "#ffa600",
-  Female: "#d45087",
+  FullTime: "orange",
+  PartTime: "slateblue",
+  Fixed: "mediumpurple",
+  Casual: "gold",
 };
 
-function WorkAnalysis() {
+function GenderAnalysis2() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-      {/* <h2>Work Status Analysis</h2> */}
+      {/* <h2>Age Analysis</h2> */}
       <div className="box">
-       
-        <StackedBarChart data={data} keys={keys} colors={colors} />
+        {/* <div className="title">
+          <strong>Age Group by: </strong>
+          <a>Business Unit</a> | <a className="active">Gender</a> |{" "}
+          <a>Work Status</a> | <a>Residency</a>
+          <strong className="total"> Total: 277</strong>
+        </div> */}
+
+        <BarChart data={data} keys={keys} colors={colors} />
 
         <div className="fields">
           {allKeys.map((key) => (
@@ -71,4 +78,4 @@ function WorkAnalysis() {
   );
 }
 
-export default WorkAnalysis;
+export default GenderAnalysis2;

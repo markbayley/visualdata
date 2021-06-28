@@ -4,45 +4,54 @@ import StackedBarChart from "../charts/StackedBarChart";
 const data = [
   {
     filter: "FullTime",
-    Male: 34,
-    Female: 60,
-    Other: 30,
+    Aust: 15,
+    Perm: 33,
+    Temp: 30,
+    Other: 5,
   },
   {
     filter: "PartTime",
-    Male: 13,
-    Female: 60,
-    Other: 3,
+    Aust: 10,
+    Perm: 2,
+    Temp: 30,
+    Other: 5,
   },
   {
     filter: "Fixed",
-    Male: 3,
-    Female: 16,
-    Other: 3,
+    Aust: 5,
+    Perm: 25,
+    Temp: 13,
+    Other: 5,
   },
   {
     filter: "Casual",
-    Male: 34,
-    Female: 60,
-    Other: 3,
+    Aust: 10,
+    Perm: 30,
+    Temp: 3,
+    Other: 50,
   },
 ];
 
-const allKeys = ["Male", "Female", "Other"];
+const allKeys = [
+  "Aust",
+  "Perm",
+  "Temp",
+  "Other",
+];
 
 const colors = {
-  Male: "#6f5df6",
-  Other: "#ffa600",
-  Female: "#d45087",
+  Other: "#26b6a1",
+  Perm: "#B6A126",
+  Aust: "#ffa600",
+  Temp: "slateblue",
 };
 
-function WorkAnalysis() {
+function WorkAnalysis2() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
       {/* <h2>Work Status Analysis</h2> */}
       <div className="box">
-       
         <StackedBarChart data={data} keys={keys} colors={colors} />
 
         <div className="fields">
@@ -71,4 +80,4 @@ function WorkAnalysis() {
   );
 }
 
-export default WorkAnalysis;
+export default WorkAnalysis2;

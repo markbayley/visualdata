@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import styled from 'styled-components';
-import * as d3 from 'd3';
+import styled from "styled-components";
+import * as d3 from "d3";
 
-const Donut = styled.svg`
-  font-family: 'Roboto', sans-serif;
+const DonutStyle = styled.svg`
+  font-family: "Roboto", sans-serif;
   .textTop {
     font-size: 18px;
   }
@@ -12,46 +12,49 @@ const Donut = styled.svg`
     font-weight: bolder;
   }
   .annotation {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 12px;
   }
 `;
 const Legend = styled.svg`
   font-size: 12px;
-  
 `;
 
-const DonutChart = () => {
+const DonutGender = () => {
   const svgRef = useRef(null);
   const margin = {
-    top: 20, right: 0, bottom: 20, left: 0
-  }
+    top: 50,
+    right: 0,
+    bottom: 20,
+    left: 0,
+  };
   const width = 600;
-  const height = 470;
+  const height = 380;
   const graphWidth = width - margin.left - margin.right;
   const graphHeight = height - margin.top - margin.bottom;
 
-  const radius = Math.min(graphWidth, graphHeight) / 2 - 30;
-  const innerRadius = 140;
+  const radius = Math.min(graphWidth, graphHeight) / 2 - 10;
+  const innerRadius = 110;
 
   const data = [
-    {"label":"Full Time", "value":88},
-    {"label":"Part Time", "value":56},
-    {"label":"Fixed Term", "value":54},
-    {"label":"Casual", "value":79},
+    { label: "Male", value: 108 },
+    { label: "Female", value: 116 },
+    { label: "Non-Binary", value: 44 },
+    { label: "Other", value: 9 },
   ];
 
   const total = data.reduce((sum, current) => sum + current.value, 0);
 
-  const colorScale = d3.scaleLinear()
+  const colorScale = d3
+    .scaleLinear()
     .domain(d3.extent(data, (data) => data.value))
-    .range([0, 1])
+    .range([0, 1]);
 
   const colored = (t) => d3.interpolatePuBu(colorScale(t));
 
   const arcLabel = () => {
     return d3.arc().innerRadius(innerRadius).outerRadius(radius);
-  }
+  };
 
   useEffect(() => {
     const svg = d3.select(svgRef.current);
@@ -73,17 +76,17 @@ const DonutChart = () => {
       .attr("fill", "#fff")
       .attr("y", 10);
 
-    const arc = d3.arc()
-      .innerRadius(innerRadius)
-      .outerRadius(radius);
+    const arc = d3.arc().innerRadius(innerRadius).outerRadius(radius);
 
-    const arcOver = d3.arc()
+    const arcOver = d3
+      .arc()
       .innerRadius(innerRadius + 5)
       .outerRadius(radius + 5);
 
     // Compute the position of each group on the pie
-    const pie = d3.pie()
-      .value(d => d.value)
+    const pie = d3
+      .pie()
+      .value((d) => d.value)
       .padAngle(0.01);
 
     // add pie
@@ -92,7 +95,7 @@ const DonutChart = () => {
       .selectAll(".slice")
       .data(pie(data))
       .join("path")
-      .attr("fill", "#26b6a1")
+      .attr("fill", "#cbb42a")
       .attr("d", arc)
       .on("mouseover", function () {
         d3.select(this).transition().duration(200).attr("d", arcOver);
@@ -124,25 +127,25 @@ const DonutChart = () => {
     svg
       .append("g")
       .attr("font-size", 12)
-     
+
       .attr("text-anchor", "middle")
       .selectAll(".annotation")
       .data(pie(data))
       .join("text")
-        .transition()
-        .duration(800)
-        .text((d) => d.data.label)
-        .attr("transform", d => `translate(${arcLabel().centroid(d)})`)
-        .attr("dy", "0.4em")
-        .attr("text-anchor", "middle")
-        .attr("fill", 'white')
       .transition()
-  }, [])
+      .duration(800)
+      .text((d) => d.data.label)
+      .attr("transform", (d) => `translate(${arcLabel().centroid(d)})`)
+      .attr("dy", "0.4em")
+      .attr("text-anchor", "middle")
+      .attr("fill", "white")
+      .transition();
+  }, []);
 
   return (
-    <div style={{  paddingBottom: "10px" }}>
+    <div style={{ paddingBottom: "10px" }}>
       {/* <h3 style={{ marginLeft: "30px" }}>Employees by Work Status</h3> */}
-      <Donut
+      <DonutStyle
         width={graphWidth}
         height={graphHeight}
         // pan left, pan up & zoom out and show double the content
@@ -153,10 +156,9 @@ const DonutChart = () => {
           ref={svgRef}
           transform={`translate(${graphWidth / 2}, ${graphHeight / 2})`}
         />
-      </Donut>
-    
+      </DonutStyle>
     </div>
   );
-}
+};
 
-export default DonutChart;
+export default DonutGender;

@@ -18,16 +18,10 @@ import ResidencyAnalysis from "./ResidencyAnalysis";
 import WorkAnalysis from "./WorkAnalysis";
 
 import AgeAnalysis from "./AgeAnalysis";
-import Donut from "../charts/Donut";
-import DonutGender from "../charts/DonutGender";
-import DonutAge from "../charts/DonutAge";
-
-
-
 
 const csvUrl = "./chart-data.csv";
 
-const Home = () => {
+const TimeSeries = () => {
   const [data, setData] = useState(null);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -46,21 +40,20 @@ const Home = () => {
 
   console.log(data);
 
-   const [toggle, setToggle] = useState(true);
-   const toggleChecked = () => setToggle((toggle) => !toggle);
+  const [toggle, setToggle] = useState(true);
+  const toggleChecked = () => setToggle((toggle) => !toggle);
 
-   const [toggle2, setToggle2] = useState(true);
-   const toggleChecked2 = () => setToggle2((toggle2) => !toggle2);
+  const [toggle2, setToggle2] = useState(true);
+  const toggleChecked2 = () => setToggle2((toggle2) => !toggle2);
 
-    const [toggle3, setToggle3] = useState(true);
-    const toggleChecked3 = () => setToggle3((toggle3) => !toggle3);
+  const [toggle3, setToggle3] = useState(true);
+  const toggleChecked3 = () => setToggle3((toggle3) => !toggle3);
 
-     const [toggle4, setToggle4] = useState(true);
-     const toggleChecked4 = () => setToggle4((toggle4) => !toggle4);
+  const [toggle4, setToggle4] = useState(true);
+  const toggleChecked4 = () => setToggle4((toggle4) => !toggle4);
 
-       const [toggle5, setToggle5] = useState(true);
-       const toggleChecked5 = () => setToggle5((toggle5) => !toggle5);
- 
+  const [toggle5, setToggle5] = useState(true);
+  const toggleChecked5 = () => setToggle5((toggle5) => !toggle5);
 
   return (
     <div className="home">
@@ -72,17 +65,14 @@ const Home = () => {
               <li className="active">
                 <Tooltip title="Headcount" placement="bottom">
                   <Link onClick={toggleChecked}>
-                    <FaIcons.FaUsers />
+                    <FaIcons.FaClock />
                   </Link>
                 </Tooltip>
               </li>
-           
-            
             </div>
           </h3>
           <div>
-           <InteractivityBasic /> 
-   
+            <CurvedLineChart />
           </div>
         </div>
         <div className="flex-item" style={{ border: "1px solid grey" }}>
@@ -90,72 +80,64 @@ const Home = () => {
             Work Status
             <div className="total">
               <li className="active">
-                <Tooltip title="Headcount" placement="bottom">
+                <Tooltip title="Business Unit" placement="bottom">
                   <Link onClick={toggleChecked2}>
                     <FaIcons.FaProjectDiagram />
                   </Link>
                 </Tooltip>
               </li>
-             
             </div>
           </h3>
-          {toggle2 && <DonutChart />}
-          {!toggle2 && <WorkAnalysis />}
+          <CurvedLineChart />
         </div>
         <div className="flex-item-small">
           <h3>
             Residency{" "}
             <div className="total">
               <li className="active">
-                <Tooltip title="Headcount" placement="bottom">
+                <Tooltip title="Business Unit" placement="bottom">
                   <Link onClick={toggleChecked4}>
-                    <FaIcons.FaUsers />
+                    <FaIcons.FaClock />
                   </Link>
                 </Tooltip>
               </li>
-           
             </div>
           </h3>
-         <Donut />
-      
+          <CurvedLineChart />
         </div>
         <div className="flex-item-small">
           <h3>
             Gender{" "}
             <div className="total">
               <li className="active">
-                <Tooltip title="Headcount" placement="bottom">
+                <Tooltip title="Business Unit" placement="bottom">
                   <Link onClick={toggleChecked3}>
-                    <FaIcons.FaUsers />
+                    <FaIcons.FaClock />
                   </Link>
                 </Tooltip>
               </li>
-           
             </div>{" "}
           </h3>
-          <DonutGender />
-       
+          <CurvedLineChart />
         </div>
         <div className="flex-item-small">
           <h3>
             Age Group{" "}
             <div className="total">
               <li className="active">
-                <Tooltip title="Headcount" placement="bottom">
+                <Tooltip title="Business Unit" placement="bottom">
                   <Link onClick={toggleChecked5}>
-                    <FaIcons.FaUsers />
+                    <FaIcons.FaClock />
                   </Link>
                 </Tooltip>
               </li>
-           
             </div>
           </h3>
-         <DonutAge />
-      
+          <CurvedLineChart />
         </div>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default TimeSeries;

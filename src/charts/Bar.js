@@ -24,10 +24,10 @@ const BarChart = () => {
     top: 20,
     right: 20,
     bottom: 70,
-    left: 60,
+    left: 20,
   };
   const width = 500;
-  const height = 250;
+  const height = 320;
   const graphWidth = width - margin.left - margin.right;
   const graphHeight = height - margin.top - margin.bottom;
 

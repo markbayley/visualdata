@@ -36,7 +36,7 @@ function BarChart({ data, keys, colors }) {
 
     // scales
     const xScale = scaleBand()
-      .domain(data.map((d) => d.work_class))
+      .domain(data.map((d) => d.filter))
       .range([0, width])
       .padding(0.25);
 
@@ -52,7 +52,7 @@ function BarChart({ data, keys, colors }) {
       .selectAll("rect")
       .data((layer) => layer)
       .join("rect")
-      .attr("x", (sequence) => xScale(sequence.data.work_class))
+      .attr("x", (sequence) => xScale(sequence.data.filter))
       .attr("width", xScale.bandwidth())
 
       .on("mouseenter", (event, value) => {
@@ -90,7 +90,7 @@ function BarChart({ data, keys, colors }) {
   return (
     <React.Fragment>
       <div ref={wrapperRef} style={{ marginBottom: "2rem" }}>
-        <svg ref={svgRef}>
+        <svg className="svg-small" ref={svgRef}>
           <g className="x-axis" />
           <g className="y-axis" />
         </svg>

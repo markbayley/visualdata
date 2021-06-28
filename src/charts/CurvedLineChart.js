@@ -12,7 +12,7 @@ const CurvedLineChart = () => {
     const myLine = d3
       .line()
       .x((value, index) => index * 75)
-      .y((value) => 180 - value)
+      .y((value) => 250 - value)
       .curve(d3.curveCardinal);
     svg
       .selectAll("path")

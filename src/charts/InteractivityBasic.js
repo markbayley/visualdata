@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import styled from "styled-components";
 
 
+
 const Canvas = styled.div`
   display: grid;
   place-items: center;
@@ -18,7 +19,7 @@ const Canvas = styled.div`
 
 
 const InteractivityBasic = () => {
-  const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75, 21, 15, 38, 12, 19]);
+  const [data, setData] = useState([25, 30, 45, 60, 10, 65, 95, 21, 15, 38, 12, 19]);
   const svgRef = useRef();
 
   
@@ -27,10 +28,10 @@ const InteractivityBasic = () => {
     top: 10,
     right: 20,
     bottom: 20,
-    left: 10,
+    left: 0,
   };
   const width = 1200;
-  const height = 500;
+  const height = 400;
   const graphHeight = height - margin.top - margin.bottom;
 
   useEffect(() => {
@@ -104,14 +105,16 @@ const InteractivityBasic = () => {
   }, [data]);
 
   return (
+    
     <Canvas>
-      <div style={{ marginLeft: "40px" }}>
+    
+      <div>
         <svg className="svg" ref={svgRef} width={width} height={height}>
           <g className="x-axis" />
           <g className="y-axis" />
         </svg>
-     
       </div>
+      
     </Canvas>
   );
 };

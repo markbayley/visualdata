@@ -3,54 +3,51 @@ import BarChart from "../charts/BarChart";
 
 const data = [
   {
-    work_class: "Australian Citizen",
-    fulltime: 14,
-    partime: 20,
-    fixedterm: 10,
-    casual: 63,
+   filter: "Australian Citizen",
+    FullTime: 14,
+    PartTime: 20,
+    Fixed: 10,
+    Casual: 63,
   },
   {
-    work_class: "Permanent Resident",
-    fulltime: 50,
-    partime: 30,
-    fixedterm: 10,
-    casual: 6,
+   filter: "Permanent Resident",
+    FullTime: 50,
+    PartTime: 30,
+    Fixed: 10,
+    Casual: 6,
   },
   {
-    work_class: "Temporary Visa",
-    fulltime: 60,
-    partime: 45,
-    fixedterm: 10,
-    casual: 8,
+   filter: "Temporary Visa",
+    FullTime: 60,
+    PartTime: 45,
+    Fixed: 10,
+    Casual: 8,
   },
   {
-    work_class: "Other Visa",
-    fulltime: 70,
-    partime: 15,
-    fixedterm: 27,
-    casual: 3,
+   filter: "Other Visa",
+    FullTime: 70,
+    PartTime: 15,
+    Fixed: 27,
+    Casual: 3,
   },
 ];
 
-const allKeys = ["fulltime", "partime", "fixedterm", "casual"];
+const allKeys = ["FullTime", "PartTime", "Fixed", "Casual"];
 
 const colors = {
-  fulltime: "orange",
-  partime: "slateblue",
-  fixedterm: "mediumpurple",
-  casual: "gold",
+  FullTime: "orange",
+  PartTime: "slateblue",
+  Fixed: "mediumpurple",
+  Casual: "gold",
 };
 
 function ResidencyAnalysis() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-        <h2>Residency Analysis</h2>
+        {/* <h2>Residency Analysis</h2> */}
       <div className="box">
-        <div className="title">
-          Residency By: <a>Business Unit</a> | <a>Gender</a> | <a>Age Group</a> |
-          <a className="active"> Work Status</a>
-        </div>
+     
         <BarChart data={data} keys={keys} colors={colors} />
 
         <div className="fields">

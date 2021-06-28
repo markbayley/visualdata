@@ -9,92 +9,106 @@ const csvUrl = "../chart-data.csv";
 const mockdata = [
   {
     filter: "Marketing",
-    Male: 34,
-    Female: 60,
-    Other: 3,
+    18: 20,
+    30: 30,
+    50: 12,
+    64: 10,
   },
   {
     filter: "Distribution",
-    Male: 20,
-    Female: 40,
-    Other: 6,
+    18: 10,
+    30: 40,
+    50: 32,
+    64: 5,
   },
   {
     filter: "Finance",
-    Male: 30,
-    Female: 45,
-    Other: 8,
+    18: 20,
+    30: 30,
+    50: 12,
+    64: 10,
   },
 
   {
     filter: "Software",
-    Male: 50,
-    Female: 30,
-    Other: 12,
+    18: 20,
+    30: 30,
+    50: 12,
+    64: 10,
   },
   {
     filter: "IT",
-    Male: 73,
-    Female: 32,
-    Other: 12,
+    18: 10,
+    30: 4,
+    50: 12,
+    64: 5,
   },
   {
     filter: "Contact Centre",
-    Male: 23,
-    Female: 32,
-    Other: 2,
+    18: 20,
+    30: 3,
+    50: 12,
+    64: 10,
   },
   {
     filter: "HR",
-    Male: 43,
-    Female: 32,
-    Other: 12,
+    18: 10,
+    30: 4,
+    50: 32,
+    64: 5,
   },
   {
     filter: "Admin",
-    Male: 13,
-    Female: 3,
-    Other: 2,
+    18: 20,
+    30: 30,
+    50: 12,
+    64: 10,
   },
   {
     filter: "Legal",
-    Male: 32,
-    Female: 32,
-    Other: 12,
+    18: 20,
+    30: 30,
+    50: 2,
+    64: 10,
   },
   {
     filter: "Packing",
-    Male: 13,
-    Female: 32,
-    Other: 12,
+    18: 10,
+    30: 40,
+    50: 32,
+    64: 5,
   },
   {
     filter: "R & D",
-    Male: 43,
-    Female: 22,
-    Other: 8,
+    18: 2,
+    30: 5,
+    50: 2,
+    64: 5,
   },
   {
     filter: "Strike Team",
-    Male: 23,
-    Female: 32,
-    Other: 12,
+    18: 10,
+    30: 10,
+    50: 32,
+    64: 5,
   },
 ];
 
 
 
-const allKeys = ["Male", "Female", "Other"];
 
-  
+const allKeys = ["18", "30", "50", "64"];
+
+
 
 const colors = {
-  Male: "#6f5df6",
-  Other: "#ffa600",
-  Female: "#d45087",
+  18: "#6f5df6",
+  30: "#9636d6",
+  50: "#d56b99",
+  64: "slateblue"
 };
 
-const BusinessAnalysis = () => {
+const BusinessAnalysisAge = () => {
   const [data, setData] = useState(mockdata);
 
   //When rerendering execute this function
@@ -103,15 +117,11 @@ const BusinessAnalysis = () => {
   }, []);
   const [keys, setKeys] = useState(allKeys);
 
-
-
   return (
     <React.Fragment>
-   
       <div className="box">
-       
         <StackedBarChart data={mockdata} keys={keys} colors={colors} />
-     
+
         <div className="fields">
           {allKeys.map((key) => (
             <div key={key} className="field">
@@ -122,7 +132,6 @@ const BusinessAnalysis = () => {
                 onChange={(e) => {
                   if (e.target.checked) {
                     setKeys(Array.from(new Set([...keys, key])));
-               
                   } else {
                     setKeys(keys.filter((_key) => _key !== key));
                   }
@@ -134,19 +143,10 @@ const BusinessAnalysis = () => {
             </div>
           ))}
         </div>
-        {/* <button onClick={() => setData(data.map((value) => value + 5))}>
-          Update data
-        </button>
-        <button onClick={() => setData(data.filter((value) => value > 5))}>
-          Filter data
-        </button>
-        <button onClick={() => setData(data.map((value) => value))}>
-          Reset data
-        </button> */}
-      
+     
       </div>
     </React.Fragment>
   );
 };
 
-export default BusinessAnalysis;
+export default BusinessAnalysisAge;

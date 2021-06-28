@@ -54,7 +54,10 @@ function StackedBarChart({ data, keys, colors }) {
       .range([0, width])
       .padding(0.25);
 
-    const yScale = scaleLinear().domain(extent).range([height, 0]);
+
+
+    const yScale = scaleLinear().domain(extent).range([height, 0])
+   
 
         const tooltip = d3
           .select("#my_dataviz")
