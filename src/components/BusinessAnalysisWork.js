@@ -101,10 +101,12 @@ const allKeys = ["FullTime", "PartTime", "Fixed", "Casual"];
 
 
 const colors = {
-  FullTime: "orange",
-  PartTime: "slateblue",
-  Fixed: "mediumpurple",
-  Casual: "gold",
+  FullTime: "#8265c2",
+  PartTime: "#e458a4",
+  Fixed: "#ff6e66",
+  Casual: "#ffa91f",
+
+
 };
 
 const BusinessAnalysisWork = () => {

@@ -22,8 +22,20 @@ import Donut from "../charts/Donut";
 import DonutGender from "../charts/DonutGender";
 import DonutAge from "../charts/DonutAge";
 
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
 
-
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+}));
 
 const csvUrl = "./chart-data.csv";
 
@@ -45,6 +57,8 @@ const Home = () => {
   }, []);
 
   console.log(data);
+
+   const classes = useStyles();
 
    const [toggle, setToggle] = useState(true);
    const toggleChecked = () => setToggle((toggle) => !toggle);
@@ -76,16 +90,14 @@ const Home = () => {
                   </Link>
                 </Tooltip>
               </li>
-           
-            
             </div>
           </h3>
           <div>
-           <InteractivityBasic /> 
-   
+            <InteractivityBasic />
           </div>
         </div>
-        <div className="flex-item">
+
+        <div className="flex-item" style={{ border: "1px solid orange" }}>
           <h3>
             Work Status
             <div className="total">
@@ -96,12 +108,19 @@ const Home = () => {
                   </Link>
                 </Tooltip>
               </li>
-             
             </div>
           </h3>
-          {toggle2 && <DonutChart />}
+          {toggle2 && (
+            <>
+              {" "}
+              <DonutChart />
+       
+        
+            </>
+          )}
           {!toggle2 && <WorkAnalysis />}
         </div>
+
         <div className="flex-item-small">
           <h3>
             Residency{" "}
@@ -113,11 +132,9 @@ const Home = () => {
                   </Link>
                 </Tooltip>
               </li>
-           
             </div>
           </h3>
-         <Donut />
-      
+          <Donut />
         </div>
         <div className="flex-item-small">
           <h3>
@@ -130,11 +147,9 @@ const Home = () => {
                   </Link>
                 </Tooltip>
               </li>
-           
             </div>{" "}
           </h3>
           <DonutGender />
-       
         </div>
         <div className="flex-item-small">
           <h3>
@@ -147,11 +162,9 @@ const Home = () => {
                   </Link>
                 </Tooltip>
               </li>
-           
             </div>
           </h3>
-         <DonutAge />
-      
+          <DonutAge />
         </div>
       </div>
     </div>

@@ -91,8 +91,9 @@ function StackedBarChart({ data, keys, colors }) {
       tooltip
         .style("transform", "translateY(-55%)")
         .style("left", event.x / 1 + "px")
-        .style("top", event.y / 2+100 + "px")
-        .style("position", "absolute");
+        .style("top", event.y / 2 + 100 + "px")
+        .style("position", "absolute")
+        .style("font-size", "14px");;
     };
     const mouseleave = function (event, d) {
       tooltip.style("opacity", 0);

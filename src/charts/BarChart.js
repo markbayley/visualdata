@@ -9,6 +9,7 @@ import {
   axisLeft,
   stackOrderAscending,
 } from "d3";
+import * as d3 from "d3";
 import useResizeObserver from "../tools/useResizeObserver";
 
 /**
@@ -42,6 +43,42 @@ function BarChart({ data, keys, colors }) {
 
     const yScale = scaleLinear().domain(extent).range([height, 0]);
 
+    const tooltip = d3
+      .select("#my_dataviz")
+      .append("div")
+      .style("display", "none")
+
+      .attr("class", "tooltip")
+      .style("background-color", "black")
+      .style("border", "solid")
+      .style("border-width", "1px")
+      .style("border-radius", "5px")
+      .style("width", "60px")
+      .style("padding", "10px")
+      .style("text-align", "center");
+
+    // Three function that change the tooltip when user hover / move / leave a cell
+    const mouseover = function (event, d) {
+      const subgroupName = d3.select(this.parentNode).datum().key;
+      const subgroupValue = d.data[subgroupName];
+      tooltip
+        .html(subgroupName + "<br>" + subgroupValue)
+        .style("opacity", 0.5)
+        .style("display", "");
+    };
+
+    const mousemove = function (event, d) {
+      tooltip
+        .style("transform", "translateY(-55%)")
+        .style("left", event.x / 1 + "px")
+        .style("top", event.y / 1.5 + 100 + "px")
+        .style("position", "absolute")
+        .style("font-size", "14px");
+    };
+    const mouseleave = function (event, d) {
+      tooltip.style("opacity", 0);
+    };
+
     // rendering
     svg
       .selectAll(".layer")
@@ -54,34 +91,21 @@ function BarChart({ data, keys, colors }) {
       .join("rect")
       .attr("x", (sequence) => xScale(sequence.data.filter))
       .attr("width", xScale.bandwidth())
-
-      .on("mouseenter", (event, value) => {
-
-        const index = svg.selectAll(".bar").nodes().indexOf(event.target);
-        svg
-          .selectAll(".tooltip")
-          .data([value])
-          .join((enter) => enter.append("text").attr("y", yScale(value) - 4))
-          .attr("class", "tooltip")
-          .text(value)
-          .attr("x", xScale(index) + xScale.bandwidth() / 2)
-          .attr("text-anchor", "middle")
-          .transition()
-          .attr("y", yScale(value) - 8)
-          .attr("opacity", 1)
-          .attr("fill", '#fff');
-      })
-      .on("mouseleave", () => svg.select(".tooltip").remove())
-     
       .attr("y", (sequence) => yScale(sequence[1]))
-      .attr("height", (sequence) => yScale(sequence[0]) - yScale(sequence[1]));
+      .attr("height", (sequence) => yScale(sequence[0]) - yScale(sequence[1]))
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
+      .attr("d", (value) => yScale(value));
 
     // axes
     const xAxis = axisBottom(xScale);
     svg
       .select(".x-axis")
       .attr("transform", `translate(0, ${height})`)
-      .call(xAxis);
+      .call(xAxis)
+      .transition()
+      .duration(1000);
 
     const yAxis = axisLeft(yScale);
     svg.select(".y-axis").call(yAxis);

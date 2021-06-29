@@ -40,10 +40,11 @@ const allKeys = [
 ];
 
 const colors = {
-  Other: "#26b6a1",
-  Perm: "#B6A126",
-  Aust: "#ffa600",
-  Temp: "slateblue",
+
+  Other: "#10a1c2",
+  Perm: "#00b79c",
+  Aust: "#86be49",
+  Temp: "#ffa91f",
 };
 
 function WorkAnalysis2() {

@@ -140,7 +140,8 @@ d3.csv(
     .attr("stroke", "grey")
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
-    .on("mouseleave", mouseleave);
+    .on("mouseleave", mouseleave)
+    
 })
 
 
