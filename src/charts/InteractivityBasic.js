@@ -22,6 +22,8 @@ const InteractivityBasic = () => {
   const [data, setData] = useState([25, 30, 45, 60, 10, 65, 95, 21, 15, 38, 12, 19]);
   const svgRef = useRef();
 
+  const xAxisRef = useRef();
+
   
 
   const margin = {

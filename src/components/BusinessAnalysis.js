@@ -82,11 +82,7 @@ const mockdata = [
   },
 ];
 
-
-
 const allKeys = ["Male", "Female", "Other"];
-
-  
 
 const colors = {
   Male: "#6f5df6",
@@ -103,15 +99,11 @@ const BusinessAnalysis = () => {
   }, []);
   const [keys, setKeys] = useState(allKeys);
 
-
-
   return (
     <React.Fragment>
-   
       <div className="box">
-       
         <StackedBarChart data={mockdata} keys={keys} colors={colors} />
-     
+
         <div className="fields">
           {allKeys.map((key) => (
             <div key={key} className="field">
@@ -122,7 +114,6 @@ const BusinessAnalysis = () => {
                 onChange={(e) => {
                   if (e.target.checked) {
                     setKeys(Array.from(new Set([...keys, key])));
-               
                   } else {
                     setKeys(keys.filter((_key) => _key !== key));
                   }
@@ -143,7 +134,6 @@ const BusinessAnalysis = () => {
         <button onClick={() => setData(data.map((value) => value))}>
           Reset data
         </button> */}
-      
       </div>
     </React.Fragment>
   );

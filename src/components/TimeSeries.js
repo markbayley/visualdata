@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import { message } from "../data/message";
-import DonutChart from "../charts/DonutChart";
-import InteractivityBasic from "../charts/InteractivityBasic";
+
 import CurvedLineChart from "../charts/CurvedLineChart";
 import { csv } from "d3";
 import { Link } from "react-router-dom";
 
 import Tooltip from "@material-ui/core/Tooltip";
 
-import Bar from "../charts/Bar";
+
 
 import * as FaIcons from "react-icons/fa";
-import BusinessAnalysis from "./BusinessAnalysis";
 
-import ResidencyAnalysis from "./ResidencyAnalysis";
-import WorkAnalysis from "./WorkAnalysis";
 
-import AgeAnalysis from "./AgeAnalysis";
+import TimeAnalysis from "./TimeAnalysis";
 
 const csvUrl = "./chart-data.csv";
 
@@ -71,9 +66,8 @@ const TimeSeries = () => {
               </li>
             </div>
           </h3>
-          <div>
-            <CurvedLineChart />
-          </div>
+
+          <TimeAnalysis />
         </div>
         <div className="flex-item" style={{ border: "1px solid grey" }}>
           <h3>
@@ -88,7 +82,7 @@ const TimeSeries = () => {
               </li>
             </div>
           </h3>
-          <CurvedLineChart />
+          <TimeAnalysis />
         </div>
         <div className="flex-item-small">
           <h3>
@@ -103,7 +97,7 @@ const TimeSeries = () => {
               </li>
             </div>
           </h3>
-          <CurvedLineChart />
+          <TimeAnalysis />
         </div>
         <div className="flex-item-small">
           <h3>
@@ -118,7 +112,7 @@ const TimeSeries = () => {
               </li>
             </div>{" "}
           </h3>
-          <CurvedLineChart />
+          <TimeAnalysis />
         </div>
         <div className="flex-item-small">
           <h3>
@@ -133,7 +127,7 @@ const TimeSeries = () => {
               </li>
             </div>
           </h3>
-          <CurvedLineChart />
+          <TimeAnalysis />
         </div>
       </div>
     </div>
