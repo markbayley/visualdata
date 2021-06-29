@@ -85,7 +85,7 @@ const Home = () => {
    
           </div>
         </div>
-        <div className="flex-item" style={{ border: "1px solid grey" }}>
+        <div className="flex-item">
           <h3>
             Work Status
             <div className="total">

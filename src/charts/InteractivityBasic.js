@@ -33,7 +33,7 @@ const InteractivityBasic = () => {
     left: 0,
   };
   const width = 1200;
-  const height = 400;
+  const height = 370;
   const graphHeight = height - margin.top - margin.bottom;
 
   useEffect(() => {

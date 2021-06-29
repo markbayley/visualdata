@@ -58,9 +58,37 @@ const TimeSeries = () => {
             Business Unit
             <div className="total">
               <li className="active">
-                <Tooltip title="Headcount" placement="bottom">
-                  <Link onClick={toggleChecked}>
-                    <FaIcons.FaClock />
+                <Tooltip title="Business Unit" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 6mth</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li className="active">
+                <Tooltip title="Business Unit" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 1yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Gender" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 3yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Age Group" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 5yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Residency" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <FaIcons.FaRegCalendar />
                   </Link>
                 </Tooltip>
               </li>
@@ -69,14 +97,42 @@ const TimeSeries = () => {
 
           <TimeAnalysis />
         </div>
-        <div className="flex-item" style={{ border: "1px solid grey" }}>
+        <div className="flex-item">
           <h3>
             Work Status
             <div className="total">
               <li className="active">
                 <Tooltip title="Business Unit" placement="bottom">
                   <Link onClick={toggleChecked2}>
-                    <FaIcons.FaProjectDiagram />
+                    <h6> 6mth</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li className="active">
+                <Tooltip title="Business Unit" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 1yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Gender" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 3yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Age Group" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 5yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Residency" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <FaIcons.FaRegCalendar />
                   </Link>
                 </Tooltip>
               </li>
@@ -90,8 +146,36 @@ const TimeSeries = () => {
             <div className="total">
               <li className="active">
                 <Tooltip title="Business Unit" placement="bottom">
-                  <Link onClick={toggleChecked4}>
-                    <FaIcons.FaClock />
+                  <Link onClick={toggleChecked2}>
+                    <h6> 6mth</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li className="active">
+                <Tooltip title="Business Unit" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 1yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Gender" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 3yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Age Group" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 5yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Residency" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <FaIcons.FaRegCalendar />
                   </Link>
                 </Tooltip>
               </li>
@@ -105,12 +189,40 @@ const TimeSeries = () => {
             <div className="total">
               <li className="active">
                 <Tooltip title="Business Unit" placement="bottom">
-                  <Link onClick={toggleChecked3}>
-                    <FaIcons.FaClock />
+                  <Link onClick={toggleChecked2}>
+                    <h6> 6mth</h6>
                   </Link>
                 </Tooltip>
               </li>
-            </div>{" "}
+              <li className="active">
+                <Tooltip title="Business Unit" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 1yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Gender" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 3yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Age Group" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 5yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Residency" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <FaIcons.FaRegCalendar />
+                  </Link>
+                </Tooltip>
+              </li>
+            </div>
           </h3>
           <TimeAnalysis />
         </div>
@@ -120,8 +232,36 @@ const TimeSeries = () => {
             <div className="total">
               <li className="active">
                 <Tooltip title="Business Unit" placement="bottom">
-                  <Link onClick={toggleChecked5}>
-                    <FaIcons.FaClock />
+                  <Link onClick={toggleChecked2}>
+                    <h6> 6mth</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li className="active">
+                <Tooltip title="Business Unit" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 1yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Gender" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 3yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Age Group" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <h6> 5yr</h6>
+                  </Link>
+                </Tooltip>
+              </li>
+              <li>
+                <Tooltip title="Residency" placement="bottom">
+                  <Link onClick={toggleChecked2}>
+                    <FaIcons.FaRegCalendar />
                   </Link>
                 </Tooltip>
               </li>

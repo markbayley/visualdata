@@ -1,7 +1,7 @@
 .svg {
   display: block;
   width: 100%;
-  height: 300px;
+  height: 250px;
   background: transparent;
   overflow: visible;
 }
@@ -9,7 +9,7 @@
 .svg-small {
   display: block;
   width: 100%;
-  height: 200px;
+  height: 220px;
   background: transparent;
   overflow: visible;
 }
@@ -45,12 +45,16 @@ svg rect.selection {
 
 
 h3 {
-  margin-left: 40px;
+  margin-left: 20px;
   margin-bottom: 0px;
 }
 
 h2 {
   text-align: center;
+}
+
+h6 {
+  margin-top: 0px;
 }
 
 .field {
@@ -115,7 +119,7 @@ a:hover{
   .box {
     /* width: 75%; */
     margin: auto;
-    padding: 48px 75px;
+    padding: 48px 45px;
     font-size: 1.1em;
   }
 }

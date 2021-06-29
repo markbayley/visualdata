@@ -27,12 +27,12 @@ const DonutChart = () => {
     top: 20, right: 0, bottom: 20, left: 0
   }
   const width = 600;
-  const height = 470;
+  const height = 400;
   const graphWidth = width - margin.left - margin.right;
   const graphHeight = height - margin.top - margin.bottom;
 
   const radius = Math.min(graphWidth, graphHeight) / 2 - 30;
-  const innerRadius = 140;
+  const innerRadius = 110;
 
   const data = [
     {"label":"Full Time", "value":88},
