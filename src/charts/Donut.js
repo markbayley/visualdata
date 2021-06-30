@@ -95,7 +95,7 @@ const Donut = () => {
       .selectAll(".slice")
       .data(pie(data))
       .join("path")
-      .attr("fill", "#7ba428")
+      .attr("fill", "#86be49")
       .attr("d", arc)
       .on("mouseover", function () {
         d3.select(this).transition().duration(200).attr("d", arcOver);
