@@ -14,10 +14,8 @@
   overflow: visible;
 }
 
-
 svg {
   display: block;
- 
 }
 
 svg rect.selection {
@@ -35,14 +33,13 @@ svg rect.selection {
   padding: 0 50px 150px; 
   text-align: center; 
   box-sizing: border-box; */
-} 
+}
 
 /* button {
   width: 100px;
   border: 1px solid black;
   margin: 0 auto 5px;
 } */
-
 
 h3 {
   margin-left: 20px;
@@ -51,8 +48,7 @@ h3 {
 
 h2 {
   text-align: center;
-   margin-bottom: 0px;
-  
+  margin-bottom: 0px;
 }
 
 h6 {
@@ -69,8 +65,7 @@ h6 {
 
 .field {
   display: inline-block;
-  margin: 0 .5em;
-  
+  margin: 0 0.5em;
 }
 
 .field input {
@@ -98,8 +93,8 @@ a {
   color: #fff;
 }
 
-a:hover{
-   color:grey; 
+a:hover {
+  color: grey;
 }
 
 .active {
@@ -110,11 +105,10 @@ a:hover{
   color: grey;
 }
 
-
 .number {
   font-size: 3em;
-  margin-top: .9em;
-  margin-bottom: -.9em;
+  margin-top: 0.9em;
+  margin-bottom: -0.9em;
 }
 
 .box {
@@ -123,7 +117,6 @@ a:hover{
   /* border-radius: 10px; */
   /* width: auto;*/
   /* height: auto; */
-  
 }
 
 @media only screen and (min-width: 600px) {
@@ -135,12 +128,10 @@ a:hover{
   }
 }
 
-
 @media only screen and (max-width: 600px) {
   h3 {
-     height: 50px;
-     margin: 20px 0px;
-    
+    height: 50px;
+    margin: 20px 0px;
   }
   .total {
     margin: 20px 0px;
@@ -151,7 +142,6 @@ a:hover{
   .flex-item-small {
     border: 1px solid grey;
     /* margin-left: 30px; */
-   
   }
   .flex-item {
     border: 1px solid grey;
@@ -161,8 +151,3 @@ a:hover{
     margin-bottom: 50px;
   }
 }
-
-
-
-
-

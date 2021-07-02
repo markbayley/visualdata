@@ -19,22 +19,16 @@ const data = [
 
   {
     filter: "Other",
-     FullTime: 44,
+    FullTime: 44,
     PartTime: 60,
     Fixed: 30,
     Casual: 20,
-  }
+  },
 ];
 
 const allKeys = ["FullTime", "PartTime", "Fixed", "Casual"];
 
-
-
 const colors = {
-  // FullTime: "orange",
-  // PartTime: "slateblue",
-  // Fixed: "mediumpurple",
-  // Casual: "gold",
   FullTime: "#8265c2",
   PartTime: "#e458a4",
   Fixed: "#ff6e66",
@@ -45,15 +39,7 @@ function GenderAnalysis2() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-      {/* <h2>Age Analysis</h2> */}
       <div className="box">
-        {/* <div className="title">
-          <strong>Age Group by: </strong>
-          <a>Business Unit</a> | <a className="active">Gender</a> |{" "}
-          <a>Work Status</a> | <a>Residency</a>
-          <strong className="total"> Total: 277</strong>
-        </div> */}
-
         <BarChart data={data} keys={keys} colors={colors} />
 
         <div className="fields">

@@ -3,11 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Filter from "./components/Filter";
-import WorkAnalysis from "./components/WorkAnalysis";
-import ResidencyAnalysis from "./components/ResidencyAnalysis";
-import GenderAnalysis from "./components/GenderAnalysis";
-import BusinessAnalysis from "./components/BusinessAnalysis";
-import AgeAnalysis from "./components/AgeAnalysis";
+import TimeSeries from "./components/TimeSeries";
 
 function App() {
   return (
@@ -16,11 +12,7 @@ function App() {
       <Switch>
         <Route path="/" exact />
         <Route path="/filter" component={Filter} />
-        <Route path="/business-unit" component={BusinessAnalysis} />
-        <Route path="/gender" component={GenderAnalysis} />
-        <Route path="/age-group" component={AgeAnalysis} />
-        <Route path="/work-status" component={WorkAnalysis} />
-        <Route path="/residency" component={ResidencyAnalysis} />
+        <Route path="/time-series" component={TimeSeries} />
       </Switch>
     </Router>
   );

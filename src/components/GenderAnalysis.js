@@ -38,14 +38,7 @@ function GenderAnalysis() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-      {/* <h2>Age Analysis</h2> */}
       <div className="box">
-        {/* <div className="title">
-          <strong>Age Group by: </strong>
-          <a>Business Unit</a> | <a className="active">Gender</a> |{" "}
-          <a>Work Status</a> | <a>Residency</a>
-          <strong className="total"> Total: 277</strong>
-        </div> */}
 
         <BarChart data={data} keys={keys} colors={colors} />
 

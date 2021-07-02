@@ -51,7 +51,6 @@ function WorkAnalysis2() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-      {/* <h2>Work Status Analysis</h2> */}
       <div className="box">
         <StackedBarChart data={data} keys={keys} colors={colors} />
 
