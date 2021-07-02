@@ -1,13 +1,5 @@
-import React, { useState } from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import { Link } from "react-router-dom";
-import { SidebarData } from "./SidebarData";
+import React from "react";
 import "./Navbar.css";
-import { IconContext } from "react-icons";
-import Tooltip from "@material-ui/core/Tooltip";
-import Button from "@material-ui/core/Button";
-
 import PropTypes from "prop-types";
 import { makeStyles, fade } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -15,25 +7,11 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-
-import PeopleIcon from "@material-ui/icons/People";
-import FilterListIcon from "@material-ui/icons/FilterList";
-import TimelineIcon from "@material-ui/icons/Timeline";
 import Home from "./Home";
 import Filter from "./Filter";
 import TimeSeries from "./TimeSeries";
-
-import Chip from "@material-ui/core/Chip";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import TextField from "@material-ui/core/TextField";
-
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
-
-import { createMuiTheme } from "@material-ui/core/styles";
-import purple from "@material-ui/core/colors/purple";
-
-
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -69,9 +47,6 @@ function a11yProps(index) {
 }
 
 const useStyles = makeStyles((theme) => ({
-
-  
-  
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
@@ -111,7 +86,6 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -133,11 +107,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-
-
-
 const Navbar = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -147,7 +116,7 @@ const Navbar = () => {
   };
 
   return (
-    <>
+    <div>
       <AppBar position="static">
         <Tabs
           value={value}
@@ -172,21 +141,6 @@ const Navbar = () => {
             />
           </div>
         </Tabs>
-        {/* <Autocomplete
-          multiple
-          id="tags-standard"
-          options={filters}
-          getOptionLabel={(option) => option.title}
-          defaultValue={[filters[5]]}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              variant="standard"
-              label="Multiple values"
-              placeholder="Favorites"
-            />
-          )}
-        /> */}
       </AppBar>
       <TabPanel value={value} index={0}>
         <Home />
@@ -197,18 +151,8 @@ const Navbar = () => {
       <TabPanel value={value} index={2}>
         <TimeSeries />
       </TabPanel>
-    </>
+    </div>
   );
 };
 
 export default Navbar;
-
-
-const filters = [
-  { title: "The Shawshank Redemption", year: 1994 },
-  { title: "The Godfather", year: 1972 },
-  { title: "The Godfather: Part II", year: 1974 },
-  { title: "The Dark Knight", year: 2008 },
-  { title: "12 Angry Men", year: 1957 },
-  { title: "Schindler's List", year: 1993 },
-];

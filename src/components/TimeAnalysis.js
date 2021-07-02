@@ -68,8 +68,6 @@ function TimeAnalysis() {
   },
   ]);
 
- 
-
   return (
     <>
       <StackedArea data={data} keys={keys} colors={colors} />
@@ -94,21 +92,6 @@ function TimeAnalysis() {
           </div>
         ))}
       </div>
-      {/* <button
-        onClick={() =>
-          setData([
-            ...data,
-            {
-              year: Math.max(...data.map((d) => d.year)) + 10,
-              "Male": Math.round(Math.random() * 100),
-              "Female": Math.round(Math.random() * 125),
-              "Other": Math.round(Math.random() * 150),
-            },
-          ])
-        }
-      >
-        Add data
-      </button> */}
     </>
   );
 }

@@ -149,8 +149,12 @@ a:hover{
     margin: 0;
   }
   .flex-item-small {
-    border-top: 1px solid grey;
+    border: 1px solid grey;
+    /* margin-left: 30px; */
    
+  }
+  .flex-item {
+    border: 1px solid grey;
   }
   .svg-small {
     height: 200px;

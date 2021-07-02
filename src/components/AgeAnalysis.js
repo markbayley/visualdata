@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import BarChart from "../charts/BarChart";
 
-
 const data = [
   {
     filter: "18-25",
@@ -47,17 +46,8 @@ function AgeAnalysis() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-      {/* <h2>Age Analysis</h2> */}
       <div className="box">
-        {/* <div className="title">
-          <strong>Age Group by: </strong>
-          <a>Business Unit</a> | <a className="active">Gender</a> |{" "}
-          <a>Work Status</a> | <a>Residency</a>
-          <strong className="total"> Total: 277</strong>
-        </div> */}
-
         <BarChart data={data} keys={keys} colors={colors} />
-
         <div className="fields">
           {allKeys.map((key) => (
             <div key={key} className="field">

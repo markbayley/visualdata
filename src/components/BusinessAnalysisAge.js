@@ -1,10 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import StackedBarChart from "../charts/StackedBarChart";
-import { csv, filter } from "d3";
-import { message } from "../data/message";
-import { Link } from "react-router-dom";
-
-const csvUrl = "../chart-data.csv";
 
 const mockdata = [
   {
@@ -94,27 +89,19 @@ const mockdata = [
   },
 ];
 
-
-
-
 const allKeys = ["18", "30", "50", "64"];
-
-
 
 const colors = {
   18: "#6f5df6",
   30: "#9636d6",
   50: "#d56b99",
-  64: "slateblue"
+  64: "slateblue",
 };
 
 const BusinessAnalysisAge = () => {
   const [data, setData] = useState(mockdata);
 
   //When rerendering execute this function
-  useEffect(() => {
-    csv(csvUrl).then(setData);
-  }, []);
   const [keys, setKeys] = useState(allKeys);
 
   return (
@@ -143,7 +130,6 @@ const BusinessAnalysisAge = () => {
             </div>
           ))}
         </div>
-     
       </div>
     </React.Fragment>
   );

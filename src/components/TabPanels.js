@@ -1,19 +1,16 @@
-import React, {useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import InteractivityBasic from "../charts/InteractivityBasic";
 import StackedBarChart from "../charts/StackedBarChart";
 import { mockdata } from "../data/mockdata";
 import { newdata } from "../data/mockdata";
 import { allKeys } from "../data/mockdata";
 import { colors } from "../data/mockdata";
-import GenderAnalysis from "./GenderAnalysis";
-
+import PhoneIcon from "@material-ui/icons/Phone";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -60,7 +57,6 @@ const TabPanels = () => {
 
   const [keys, setKeys] = useState(allKeys);
 
-
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -70,18 +66,18 @@ const TabPanels = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <div style={{ backgroundColor: "grey" }}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
         >
-          <Tab label="Business Unit" {...a11yProps(0)} />
-          <Tab label="Age Group" {...a11yProps(1)} />
-          <Tab label="Work Status" {...a11yProps(2)} />
-          <Tab label="Residency" {...a11yProps(3)} />
+          <Tab icon={<PhoneIcon />} {...a11yProps(0)} />
+          <Tab label="Age" {...a11yProps(1)} />
+          <Tab label="Work" {...a11yProps(2)} />
+          <Tab label="Resi" {...a11yProps(3)} />
         </Tabs>
-      </AppBar>
+      </div>
       <TabPanel value={value} index={0} style={{ backgroundColor: "#383c78" }}>
         <StackedBarChart data={mockdata} keys={allKeys} colors={colors} />
         <div className="fields">
@@ -135,6 +131,6 @@ const TabPanels = () => {
       </TabPanel>
     </div>
   );
-}
+};
 
 export default TabPanels;

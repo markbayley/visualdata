@@ -40,11 +40,9 @@ function WorkAnalysis() {
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-      {/* <h2>Work Status Analysis</h2> */}
       <div className="box">
-       
         <StackedBarChart data={data} keys={keys} colors={colors} />
-
+        
         <div className="fields">
           {allKeys.map((key) => (
             <div key={key} className="field">
@@ -60,6 +58,7 @@ function WorkAnalysis() {
                   }
                 }}
               />
+
               <label htmlFor={key} style={{ color: colors[key] }}>
                 {key}
               </label>

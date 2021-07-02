@@ -7,8 +7,6 @@
   list-style: none;
 }
 
-
-
 .flex-item-large {
   width: 100%;
   height: 200px;
@@ -28,32 +26,20 @@
   /* border: 1px solid grey; */
 }
 
-
 .flex-item {
-
-
   height: 440px;
   color: white;
-
-
- 
- 
-  
 }
 
 .flex-tiny {
-
- 
   width: 90px;
   color: white;
   border: 3px solid white;
-  border-radius: 5px ;
+  border-radius: 5px;
   text-align: center;
   font-size: 1.1em;
 
   margin-top: 50px;
-
-  
 }
 
 .icons {
@@ -64,8 +50,8 @@
 }
 
 .icon {
- justify-content: space-around;
-   padding: 20;
+  justify-content: space-around;
+  padding: 20;
   margin: 20;
 }
 
@@ -73,35 +59,27 @@
   color: red;
 }
 
-
 @media only screen and (min-width: 1800px) {
   .flex-container {
-     justify-content: center;
+    justify-content: center;
   }
   .flex-item-chart {
-    border-top: 1px  solid grey;
-    border-left: 1px  solid grey;
-    border-right: 1px  solid grey;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
     width: 66.1%;
- 
   }
   .flex-item {
     width: 33%;
-         border-top: 1px  solid grey;
-    border-right: 1px  solid grey;
-     border-left: 1px  solid grey;
- 
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
   }
   .flex-item-large {
     width: 33%;
- 
-      
-    
-  
   }
   .flex-item-small {
     width: 33%;
-      border: 1px solid grey;
-
+    border: 1px solid grey;
   }
 }

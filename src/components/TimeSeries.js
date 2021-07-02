@@ -1,39 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Home.css";
-
-import CurvedLineChart from "../charts/CurvedLineChart";
-import { csv } from "d3";
 import { Link } from "react-router-dom";
-
 import Tooltip from "@material-ui/core/Tooltip";
-
-
-
 import * as FaIcons from "react-icons/fa";
-
-
 import TimeAnalysis from "./TimeAnalysis";
 
 const csvUrl = "./chart-data.csv";
 
 const TimeSeries = () => {
   const [data, setData] = useState(null);
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  useEffect(() => {
-    csv(csvUrl).then(setData);
-  }, []);
-
-  console.log(data);
 
   const [toggle, setToggle] = useState(true);
   const toggleChecked = () => setToggle((toggle) => !toggle);

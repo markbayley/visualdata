@@ -1,80 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import { message } from "../data/message";
 import DonutChart from "../charts/DonutChart";
 import InteractivityBasic from "../charts/InteractivityBasic";
-import CurvedLineChart from "../charts/CurvedLineChart";
-import { csv } from "d3";
 import { Link } from "react-router-dom";
-
 import Tooltip from "@material-ui/core/Tooltip";
-
-import Bar from "../charts/Bar";
-
 import * as FaIcons from "react-icons/fa";
-import BusinessAnalysis from "./BusinessAnalysis";
-
-import ResidencyAnalysis from "./ResidencyAnalysis";
 import WorkAnalysis from "./WorkAnalysis";
-
-import AgeAnalysis from "./AgeAnalysis";
 import Donut from "../charts/Donut";
 import DonutGender from "../charts/DonutGender";
 import DonutAge from "../charts/DonutAge";
 
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
-}));
-
-const csvUrl = "./chart-data.csv";
-
 const Home = () => {
-  const [data, setData] = useState(null);
+  const [toggle, setToggle] = useState(true);
+  const toggleChecked = () => setToggle((toggle) => !toggle);
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [toggle2, setToggle2] = useState(true);
+  const toggleChecked2 = () => setToggle2((toggle2) => !toggle2);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const [toggle3, setToggle3] = useState(true);
+  const toggleChecked3 = () => setToggle3((toggle3) => !toggle3);
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const [toggle4, setToggle4] = useState(true);
+  const toggleChecked4 = () => setToggle4((toggle4) => !toggle4);
 
-  useEffect(() => {
-    csv(csvUrl).then(setData);
-  }, []);
-
-  console.log(data);
-
-   const classes = useStyles();
-
-   const [toggle, setToggle] = useState(true);
-   const toggleChecked = () => setToggle((toggle) => !toggle);
-
-   const [toggle2, setToggle2] = useState(true);
-   const toggleChecked2 = () => setToggle2((toggle2) => !toggle2);
-
-    const [toggle3, setToggle3] = useState(true);
-    const toggleChecked3 = () => setToggle3((toggle3) => !toggle3);
-
-     const [toggle4, setToggle4] = useState(true);
-     const toggleChecked4 = () => setToggle4((toggle4) => !toggle4);
-
-       const [toggle5, setToggle5] = useState(true);
-       const toggleChecked5 = () => setToggle5((toggle5) => !toggle5);
- 
+  const [toggle5, setToggle5] = useState(true);
+  const toggleChecked5 = () => setToggle5((toggle5) => !toggle5);
 
   return (
     <div className="home">
@@ -86,7 +37,7 @@ const Home = () => {
               <li className="active">
                 <Tooltip title="Headcount" placement="bottom">
                   <Link onClick={toggleChecked}>
-                    <FaIcons.FaUsers />
+                    <FaIcons.FaExpand />
                   </Link>
                 </Tooltip>
               </li>
@@ -97,9 +48,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex-item" style={{ border: "1px solid orange" }}>
+        <div className="flex-item">
           <h3>
-            Work Status
+            <Link to="/filter">Work Status</Link>
             <div className="total">
               <li className="active">
                 <Tooltip title="Headcount" placement="bottom">
@@ -114,8 +65,6 @@ const Home = () => {
             <>
               {" "}
               <DonutChart />
-       
-        
             </>
           )}
           {!toggle2 && <WorkAnalysis />}

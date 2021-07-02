@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
 import StackedBarChart from "../charts/StackedBarChart";
-import { csv, filter } from "d3";
-import { message } from "../data/message";
-import { Link } from "react-router-dom";
-
-const csvUrl = "../chart-data.csv";
 
 const mockdata = [
   {
@@ -94,9 +89,6 @@ const BusinessAnalysis = () => {
   const [data, setData] = useState(mockdata);
 
   //When rerendering execute this function
-  useEffect(() => {
-    csv(csvUrl).then(setData);
-  }, []);
   const [keys, setKeys] = useState(allKeys);
 
   return (
@@ -125,15 +117,6 @@ const BusinessAnalysis = () => {
             </div>
           ))}
         </div>
-        {/* <button onClick={() => setData(data.map((value) => value + 5))}>
-          Update data
-        </button>
-        <button onClick={() => setData(data.filter((value) => value > 5))}>
-          Filter data
-        </button>
-        <button onClick={() => setData(data.map((value) => value))}>
-          Reset data
-        </button> */}
       </div>
     </React.Fragment>
   );
