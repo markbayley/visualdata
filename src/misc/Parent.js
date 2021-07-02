@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Child from "./Child";
+import Child from "../Child";
 
 function Parent() {
   //Set the current state to 0
